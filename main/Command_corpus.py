@@ -22,7 +22,13 @@ def is_number(s):
     except ValueError:
         return False
 
-pat = re.compile(r"[\w]+|[.,!?;|]")
+_pat_fallback = re.compile(r"[0-9A-Za-z가-힣]+|[^\s]")
+
+def safe_word_tokenize(text):
+    try:
+        return word_tokenize(text)
+    except Exception:
+        return _pat_fallback.findall(text)
 
 
 class Command_Corpus:
@@ -515,6 +521,8 @@ class Command_Corpus:
             self.test_user_history_graph = user_history_data['test_user_history_graph']
             self.test_user_history_category_mask = user_history_data['test_user_history_category_mask']
             self.test_user_history_category_indices = user_history_data['test_user_history_category_indices']
+            self.user_history_orders = user_history_data['user_history_orders']
+
 
         # meta data
         self.negative_sample_num = config.negative_sample_num                                           # negative sample number for training
@@ -687,176 +695,142 @@ class Command_Corpus:
         self.report_content_mask[0][0] = True  # for <PAD> report
         self.report_time_mask[0][0] = True     # for <PAD> report
 
-        # generate userDataset meta data
-        train_history = {u.get("userId", ""): Command_Corpus._history_from_str(u.get("history", "")) for u in Command_Corpus._load_users(os.path.join(config.train_root, 'users.tsv'))}
-        dev_history = {u.get("userId", ""): Command_Corpus._history_from_str(u.get("history", "")) for u in Command_Corpus._load_users(os.path.join(config.dev_root, 'users.tsv'))}
-        test_history = {u.get("userId", ""): Command_Corpus._history_from_str(u.get("history", "")) for u in Command_Corpus._load_users(os.path.join(config.test_root, 'users.tsv'))}
+        def _make_user_history_tables(root_dir: str):
+            hist_index = np.zeros([self.user_num, self.max_history_num], dtype=np.int64)
+            hist_mask  = np.zeros([self.user_num, self.max_history_num], dtype=bool)
 
-        # Load behaviors for dev/test (USER 추천 방식) 
-        train_behaviors = Command_Corpus._load_behaviors(os.path.join(config.train_root, 'behaviors.tsv')) 
-        dev_behaviors = Command_Corpus._load_behaviors(os.path.join(config.dev_root, 'behaviors.tsv')) 
-        test_behaviors = Command_Corpus._load_behaviors(os.path.join(config.test_root, 'behaviors.tsv'))
-        
-        def parse_impressions_users(impressions_str: str):
-            """'user-001-1 user-002-0 ...' -> [(user_id, label_int), ...]"""
-            out = []
-            if not impressions_str:
-                return out
-            for tok in impressions_str.strip().split():
-                tok = tok.strip()
-                if not tok:
-                    continue
-                parts = tok.rsplit('-', 1)
-                if len(parts) != 2:
-                    continue
-                uid = parts[0].strip()
-                lab = parts[1].strip()
+            users = Command_Corpus._load_users(os.path.join(root_dir, "users.tsv"))
+            for u in users:
+                uid = str(u.get("userId", "")).strip()
                 if not uid:
                     continue
-                out.append((uid, 1 if lab == '1' else 0))
-            return out
-        
-        def build_user_history(user_id: str, history_dict):
-            hist = history_dict.get(user_id, [])
-            mapped = []
-            for rid in hist:
-                rid = "" if rid is None else str(rid).strip()
-                mapped.append(self.report_ID_dict.get(rid, 0))
-
-            # keep last max_history_num
-            if len(mapped) > self.max_history_num:
-                mapped = mapped[-self.max_history_num:]
-
-            hist_len = len(mapped)
-            padded = mapped + [0] * (self.max_history_num - hist_len)
-
-            mask = np.zeros([self.max_history_num], dtype=bool)
-            mask[:hist_len] = True
-            return padded, mask
-
-        self.train_userDataset = []
-        self.train_indices = []  # 필요하면 (behavior_index를 저장) - MIND train은 보통 따로 안씀
-
-        for behavior_index, b in enumerate(train_behaviors):
-            cmd_id = str(b.get("CommandID", "")).strip()
-            cmd_idx = self.report_ID_dict.get(cmd_id, 0)
-            if cmd_idx == 0:
-                continue
-
-            pairs = parse_impressions_users(b.get("Impressions", ""))
-            if not pairs:
-                continue
-
-            pos_users = []
-            neg_users = []
-
-            for uid, lab in pairs:
                 uidx = self.user_ID_dict.get(uid, 0)
                 if uidx == 0:
                     continue
-                if lab == 1:
-                    pos_users.append(uid)
-                else:
-                    neg_users.append(uid)
 
-            # negative pool을 index로 변환
-            neg_user_indices = []
-            for nuid in neg_users:
-                nidx = self.user_ID_dict.get(nuid, 0)
-                if nidx != 0:
-                    neg_user_indices.append(nidx)
-
-            # MIND train: 각 positive마다 한 샘플
-            for puid in pos_users:
-                pidx = self.user_ID_dict.get(puid, 0)
-                if pidx == 0:
+                history_list = Command_Corpus._history_from_str(u.get("history", ""))
+                if not history_list:
                     continue
 
-                user_history, user_history_mask = build_user_history(puid, train_history)
+                # keep last max_history_num (MIND 스타일)
+                offset = max(0, len(history_list) - self.max_history_num)
+                history_list = history_list[offset:]
 
-                self.train_userDataset.append([
-                    pidx,
-                    user_history,
-                    user_history_mask.copy(),
-                    cmd_idx,
-                    neg_user_indices,     # non-click users (negative candidates)
-                    behavior_index
-                ])
+                for j, rid in enumerate(history_list):
+                    if j >= self.max_history_num:
+                        break
+                    rid = "" if rid is None else str(rid).strip()
+                    if not rid:
+                        continue
+                    r_idx = self.report_ID_dict.get(rid, 0)  # unknown -> 0(PAD)
+                    hist_index[uidx, j] = r_idx
+                    if r_idx != 0:
+                        hist_mask[uidx, j] = True
+
+            return hist_index, hist_mask
+
+        self.train_user_history_index, self.train_user_history_mask = _make_user_history_tables(config.train_root)
+        self.dev_user_history_index,  self.dev_user_history_mask  = _make_user_history_tables(config.dev_root)
+        self.test_user_history_index, self.test_user_history_mask = _make_user_history_tables(config.test_root)
+
+        self.train_samples = []  # (cmd_idx, pos_user, neg_pool, behavior_index)
+
+        with open(os.path.join(config.train_root, 'behaviors.tsv'), 'r', encoding='utf-8') as f:
+            for behavior_index, line in enumerate(f):
+                impression_ID, dataId, time, impression_users = line.strip().split('\t')
+
+                cmd_idx = self.report_ID_dict.get(dataId, 0)
+                if cmd_idx == 0:
+                    continue
+
+                pos_users = []
+                neg_pool = []
+                for token in impression_users.split():
+                    if '-' not in token:
+                        continue
+                    uid, label = token.rsplit('-', 1)
+                    uidx = self.user_ID_dict.get(uid, 0)
+                    if uidx == 0:
+                        continue
+                    if label == '1':
+                        pos_users.append(uidx)
+                    else:
+                        neg_pool.append(uidx)
+
+                for pos_u in pos_users:
+                    self.train_samples.append((cmd_idx, pos_u, neg_pool, behavior_index))
 
         self.dev_userDataset = []
-        self.dev_indices = []   # group id list (MIND-style)
-        self.dev_truth = {}     # (group_id -> [labels in order]) 원하면 만듦
-        self.dev_group_info = {}  # (sample_idx -> (group_id, pos, label)) 네 방식 유지 가능
+        self.dev_indices = []
 
-        for dev_ID, b in enumerate(dev_behaviors):
-            cmd_id = str(b.get("CommandID", "")).strip()
-            cmd_idx = self.report_ID_dict.get(cmd_id, 0)
-            if cmd_idx == 0:
-                continue
+        with open(os.path.join(config.dev_root, 'behaviors.tsv'), 'r', encoding='utf-8') as f:
+            for dev_ID, line in enumerate(f):
+                impression_ID, dataId, time, impression_users = line.strip().split('\t')
 
-            pairs = parse_impressions_users(b.get("Impressions", ""))
-            if not pairs:
-                continue
-
-            # 후보 순서 유지가 중요 (truth/pred 그룹핑 동일해야 함)
-            for pos, (uid, lab) in enumerate(pairs):
-                uidx = self.user_ID_dict.get(uid, 0)
-                if uidx == 0:
-                    # 보통은 unknown user는 0으로 넣지 말고 skip 권장 (평가 truth와 길이 달라질 수 있음)
+                report_idx = self.report_ID_dict.get(dataId, 0)
+                if report_idx == 0:
                     continue
 
-                user_history, user_history_mask = build_user_history(uid, dev_history)
+                for token in impression_users.split():
+                    if '-' not in token:
+                        continue
+                    uid, _ = token.rsplit('-', 1)
+                    user_idx = self.user_ID_dict.get(uid, 0)
+                    if user_idx == 0:
+                        continue
 
-                sample_idx = len(self.dev_userDataset)
-                self.dev_userDataset.append([
-                    uidx,
-                    user_history,
-                    user_history_mask.copy(),
-                    cmd_idx,
-                    dev_ID
-                ])
-                self.dev_indices.append(dev_ID)
-                self.dev_group_info[sample_idx] = (dev_ID, pos, lab)
+                    cmd_idx = self.report_ID_dict.get(dataId, 0)
+                    if cmd_idx == 0:
+                        continue
+
+                    self.dev_userDataset.append([
+                        cmd_idx,
+                        user_idx,
+                        dev_ID
+                    ])
+
+                    self.dev_indices.append(dev_ID)
+
 
         self.test_userDataset = []
         self.test_indices = []
-        self.test_group_info = {}
 
-        for test_ID, b in enumerate(test_behaviors):
-            cmd_id = str(b.get("CommandID", "")).strip()
-            cmd_idx = self.report_ID_dict.get(cmd_id, 0)
-            if cmd_idx == 0:
-                continue
+        with open(os.path.join(config.test_root, 'behaviors.tsv'), 'r', encoding='utf-8') as f:
+            for test_ID, line in enumerate(f):
+                impression_ID, dataId, time, impression_users = line.strip().split('\t')
 
-            pairs = parse_impressions_users(b.get("Impressions", ""))
-            if not pairs:
-                continue
-
-            for pos, (uid, lab) in enumerate(pairs):
-                uidx = self.user_ID_dict.get(uid, 0)
-                if uidx == 0:
+                report_idx = self.report_ID_dict.get(dataId, 0)
+                if report_idx == 0:
                     continue
 
-                user_history, user_history_mask = build_user_history(uid, test_history)
+                for token in impression_users.split():
+                    if '-' not in token:
+                        continue
+                    uid, _ = token.rsplit('-', 1)
+                    user_idx = self.user_ID_dict.get(uid, 0)
+                    if user_idx == 0:
+                        continue
+                    
+                    cmd_idx = self.report_ID_dict.get(dataId, 0)
+                    if cmd_idx == 0:
+                        continue
 
-                sample_idx = len(self.test_userDataset)
-                self.test_userDataset.append([
-                    uidx,
-                    user_history,
-                    user_history_mask.copy(),
-                    cmd_idx,
-                    test_ID
-                ])
-                self.test_indices.append(test_ID)
-                self.test_group_info[sample_idx] = (test_ID, pos, lab)
+                    self.test_userDataset.append([
+                        cmd_idx,
+                        user_idx,
+                        test_ID
+                    ])
+
+                    self.test_indices.append(test_ID)
 
 
         self.train_useridx_to_graphrow = Command_Corpus._build_useridx_to_graphrow(
-            user_history_data.get('user_history_orders', {}).get('train', []), self.user_ID_dict
+            self.user_history_orders.get('train', []), self.user_ID_dict
         )
+
         self.dev_useridx_to_graphrow = Command_Corpus._build_useridx_to_graphrow(
-            user_history_data.get('user_history_orders', {}).get('dev', []), self.user_ID_dict
+            self.user_history_orders.get('dev', []), self.user_ID_dict
         )
         self.test_useridx_to_graphrow = Command_Corpus._build_useridx_to_graphrow(
-            user_history_data.get('user_history_orders', {}).get('test', []), self.user_ID_dict
+            self.user_history_orders.get('test', []), self.user_ID_dict
         )
