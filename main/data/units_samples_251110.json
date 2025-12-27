@@ -1,0 +1,220 @@
+{
+  "units": [
+    {
+      "unitId": "unit-001",
+      "name": "사단 본부",
+      "unitSize": "사단",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 591 361"
+    },
+    {
+      "unitId": "unit-002",
+      "name": "1여단",
+      "unitSize": "여단",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 562 352"
+    },
+    {
+      "unitId": "unit-003",
+      "name": "1여단 1대대",
+      "unitSize": "대대",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 548 345"
+    },
+    {
+      "unitId": "unit-004",
+      "name": "1여단 2대대",
+      "unitSize": "대대",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 533 338"
+    },
+    {
+      "unitId": "unit-005",
+      "name": "1여단 3대대",
+      "unitSize": "대대",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 521 330"
+    },
+    {
+      "unitId": "unit-006",
+      "name": "1여단 기갑중대",
+      "unitSize": "중대",
+      "unitType": "기갑",
+      "combatPower": 100,
+      "location": "52S DH 507 323"
+    },
+    {
+      "unitId": "unit-007",
+      "name": "1여단 방공중대",
+      "unitSize": "중대",
+      "unitType": "방공",
+      "combatPower": 100,
+      "location": "52S DH 498 316"
+    },
+    {
+      "unitId": "unit-008",
+      "name": "2여단",
+      "unitSize": "여단",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 482 309"
+    },
+    {
+      "unitId": "unit-009",
+      "name": "2여단 1대대",
+      "unitSize": "대대",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 471 302"
+    },
+    {
+      "unitId": "unit-010",
+      "name": "2여단 2대대",
+      "unitSize": "대대",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 459 296"
+    },
+    {
+      "unitId": "unit-011",
+      "name": "2여단 3대대",
+      "unitSize": "대대",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 447 289"
+    },
+    {
+      "unitId": "unit-012",
+      "name": "2여단 기갑중대",
+      "unitSize": "중대",
+      "unitType": "기갑",
+      "combatPower": 100,
+      "location": "52S DH 436 282"
+    },
+    {
+      "unitId": "unit-013",
+      "name": "2여단 방공중대",
+      "unitSize": "중대",
+      "unitType": "방공",
+      "combatPower": 100,
+      "location": "52S DH 425 275"
+    },
+    {
+      "unitId": "unit-014",
+      "name": "3여단",
+      "unitSize": "여단",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 412 268"
+    },
+    {
+      "unitId": "unit-015",
+      "name": "3여단 1대대",
+      "unitSize": "대대",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 398 261"
+    },
+    {
+      "unitId": "unit-016",
+      "name": "3여단 2대대",
+      "unitSize": "대대",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 387 254"
+    },
+    {
+      "unitId": "unit-017",
+      "name": "3여단 3대대",
+      "unitSize": "대대",
+      "unitType": "보병",
+      "combatPower": 100,
+      "location": "52S DH 376 247"
+    },
+    {
+      "unitId": "unit-018",
+      "name": "3여단 기갑중대",
+      "unitSize": "중대",
+      "unitType": "기갑",
+      "combatPower": 100,
+      "location": "52S DH 365 240"
+    },
+    {
+      "unitId": "unit-019",
+      "name": "3여단 방공중대",
+      "unitSize": "중대",
+      "unitType": "방공",
+      "combatPower": 100,
+      "location": "52S DH 354 233"
+    },
+    {
+      "unitId": "unit-020",
+      "name": "포병여단",
+      "unitSize": "여단",
+      "unitType": "포병",
+      "combatPower": 100,
+      "location": "52S DH 341 226"
+    },
+    {
+      "unitId": "unit-021",
+      "name": "포병여단 1대대",
+      "unitSize": "대대",
+      "unitType": "포병",
+      "combatPower": 100,
+      "location": "52S DH 329 219"
+    },
+    {
+      "unitId": "unit-022",
+      "name": "포병여단 2대대",
+      "unitSize": "대대",
+      "unitType": "포병",
+      "combatPower": 100,
+      "location": "52S DH 317 212"
+    },
+    {
+      "unitId": "unit-023",
+      "name": "포병여단 3대대",
+      "unitSize": "대대",
+      "unitType": "포병",
+      "combatPower": 100,
+      "location": "52S DH 305 205"
+    },
+    {
+      "unitId": "unit-024",
+      "name": "공병대대",
+      "unitSize": "대대",
+      "unitType": "공병",
+      "combatPower": 100,
+      "location": "52S DH 293 198"
+    },
+    {
+      "unitId": "unit-025",
+      "name": "기갑대대",
+      "unitSize": "대대",
+      "unitType": "기갑",
+      "combatPower": 100,
+      "location": "52S DH 281 191"
+    },
+    {
+      "unitId": "unit-026",
+      "name": "방공대대",
+      "unitSize": "대대",
+      "unitType": "방공",
+      "combatPower": 100,
+      "location": "52S DH 264 184"
+    },
+    {
+      "unitId": "unit-027",
+      "name": "정찰대대",
+      "unitSize": "대대",
+      "unitType": "정찰",
+      "combatPower": 100,
+      "location": "52S DH 252 176"
+    }
+  ]
+}

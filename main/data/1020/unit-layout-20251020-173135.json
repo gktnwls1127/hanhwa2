@@ -1,0 +1,2735 @@
+{
+  "map": {
+    "cell_size_m": 400,
+    "rows": 70,
+    "cols": 125,
+    "width_km": 50,
+    "height_km": 28,
+    "center": {
+      "wgs84": {
+        "lat": 38.146972,
+        "lon": 128.2472
+      },
+      "mgrs100": "52SDH340223"
+    },
+    "center_mgrs": "52SDH340223",
+    "right_high": {
+      "wgs84": {
+        "lat": 38.27273556449874,
+        "lon": 128.53276655697184
+      },
+      "mgrs100": "52SDH591361"
+    },
+    "right_low": {
+      "wgs84": {
+        "lat": 38.02120843550126,
+        "lon": 128.53276655697184
+      },
+      "mgrs100": "52SDH589082"
+    },
+    "left_high": {
+      "wgs84": {
+        "lat": 38.27273556449874,
+        "lon": 127.96163344302813
+      },
+      "mgrs100": "52SDH091365"
+    },
+    "left_low": {
+      "wgs84": {
+        "lat": 38.02120843550126,
+        "lon": 127.96163344302813
+      },
+      "mgrs100": "52SDH088086"
+    }
+  },
+  "hostile_units": [
+    {
+      "side": "hostile",
+      "name": "사단",
+      "echelon": "XX",
+      "branch": "기보",
+      "grid_x": 4,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 127.97648290399067
+        },
+        "mgrs100": "52SDH103225"
+      },
+      "strength": 81,
+      "meta": {
+        "id": "auto_hostile_div_1760949092374_upbsbs",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4254,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "적사단 - 1연대",
+      "echelon": "IV",
+      "branch": "기보",
+      "grid_x": 27,
+      "grid_y": 12,
+      "location": {
+        "wgs84": {
+          "lat": 38.06342906072583,
+          "lon": 128.08157139695632
+        },
+        "mgrs100": "52SDH194132"
+      },
+      "strength": 79,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr",
+        "regtNo": "1",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 1402,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1연대 - 1대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 40,
+      "grid_y": 4,
+      "location": {
+        "wgs84": {
+          "lat": 38.03468310312612,
+          "lon": 128.14096924080647
+        },
+        "mgrs100": "52SDH246100"
+      },
+      "strength": 82,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn1_1760949092375_yl8fre",
+        "bnNo": "1",
+        "parentRegt": "hostile_regt1_1760949092375_ri16cr",
+        "parentBn": null,
+        "cell_index": 415,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 2,
+      "location": {
+        "wgs84": {
+          "lat": 38.02749661372619,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH278091"
+      },
+      "strength": 96,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn1_1760949092375_yl8fre_coy1_1760949092375_a1h4oi",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "hostile_regt1_1760949092375_ri16cr_bn1_1760949092375_yl8fre",
+        "cell_index": 173,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 4,
+      "location": {
+        "wgs84": {
+          "lat": 38.03468310312612,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH278099"
+      },
+      "strength": 88,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn1_1760949092375_yl8fre_coy2_1760949092375_fcvit8",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "hostile_regt1_1760949092375_ri16cr_bn1_1760949092375_yl8fre",
+        "cell_index": 423,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 6,
+      "location": {
+        "wgs84": {
+          "lat": 38.04186959252605,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH278107"
+      },
+      "strength": 63,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn1_1760949092375_yl8fre_coy3_1760949092375_wdax8l",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "hostile_regt1_1760949092375_ri16cr_bn1_1760949092375_yl8fre",
+        "cell_index": 673,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1연대 - 2대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 40,
+      "grid_y": 12,
+      "location": {
+        "wgs84": {
+          "lat": 38.06342906072583,
+          "lon": 128.14096924080647
+        },
+        "mgrs100": "52SDH246132"
+      },
+      "strength": 75,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn2_1760949092375_ur5tku",
+        "bnNo": "2",
+        "parentRegt": "hostile_regt1_1760949092375_ri16cr",
+        "parentBn": null,
+        "cell_index": 1415,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 10,
+      "location": {
+        "wgs84": {
+          "lat": 38.0562425713259,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH278123"
+      },
+      "strength": 87,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn2_1760949092375_ur5tku_coy1_1760949092375_jbq0oz",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "hostile_regt1_1760949092375_ri16cr_bn2_1760949092375_ur5tku",
+        "cell_index": 1173,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 12,
+      "location": {
+        "wgs84": {
+          "lat": 38.06342906072583,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH278131"
+      },
+      "strength": 78,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn2_1760949092375_ur5tku_coy2_1760949092375_gb7gjf",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "hostile_regt1_1760949092375_ri16cr_bn2_1760949092375_ur5tku",
+        "cell_index": 1423,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 14,
+      "location": {
+        "wgs84": {
+          "lat": 38.07061555012576,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH278139"
+      },
+      "strength": 60,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn2_1760949092375_ur5tku_coy3_1760949092375_bcoe3u",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "hostile_regt1_1760949092375_ri16cr_bn2_1760949092375_ur5tku",
+        "cell_index": 1673,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1연대 - 3대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 40,
+      "grid_y": 20,
+      "location": {
+        "wgs84": {
+          "lat": 38.09217501832555,
+          "lon": 128.14096924080647
+        },
+        "mgrs100": "52SDH246163"
+      },
+      "strength": 80,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn3_1760949092375_p128vz",
+        "bnNo": "3",
+        "parentRegt": "hostile_regt1_1760949092375_ri16cr",
+        "parentBn": null,
+        "cell_index": 2415,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 18,
+      "location": {
+        "wgs84": {
+          "lat": 38.08498852892562,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH278155"
+      },
+      "strength": 67,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn3_1760949092375_p128vz_coy1_1760949092375_my1s46",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "hostile_regt1_1760949092375_ri16cr_bn3_1760949092375_p128vz",
+        "cell_index": 2173,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 20,
+      "location": {
+        "wgs84": {
+          "lat": 38.09217501832555,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH278163"
+      },
+      "strength": 76,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn3_1760949092375_p128vz_coy2_1760949092375_uydink",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "hostile_regt1_1760949092375_ri16cr_bn3_1760949092375_p128vz",
+        "cell_index": 2423,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 22,
+      "location": {
+        "wgs84": {
+          "lat": 38.099361507725476,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH278171"
+      },
+      "strength": 96,
+      "meta": {
+        "id": "hostile_regt1_1760949092375_ri16cr_bn3_1760949092375_p128vz_coy3_1760949092375_p5wtae",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "hostile_regt1_1760949092375_ri16cr_bn3_1760949092375_p128vz",
+        "cell_index": 2673,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "적사단 - 2연대",
+      "echelon": "IV",
+      "branch": "기보",
+      "grid_x": 27,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.08157139695632
+        },
+        "mgrs100": "52SDH195224"
+      },
+      "strength": 85,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde",
+        "regtNo": "2",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4277,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2연대 - 1대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 40,
+      "grid_y": 27,
+      "location": {
+        "wgs84": {
+          "lat": 38.117327731225295,
+          "lon": 128.14096924080647
+        },
+        "mgrs100": "52SDH246191"
+      },
+      "strength": 84,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn1_1760949092375_4spdx5",
+        "bnNo": "1",
+        "parentRegt": "hostile_regt2_1760949092375_sw5pde",
+        "parentBn": null,
+        "cell_index": 3290,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 25,
+      "location": {
+        "wgs84": {
+          "lat": 38.11014124182537,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH278183"
+      },
+      "strength": 95,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn1_1760949092375_4spdx5_coy1_1760949092375_iv89sj",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "hostile_regt2_1760949092375_sw5pde_bn1_1760949092375_4spdx5",
+        "cell_index": 3048,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 27,
+      "location": {
+        "wgs84": {
+          "lat": 38.117327731225295,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279191"
+      },
+      "strength": 96,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn1_1760949092375_4spdx5_coy2_1760949092375_uxq5n5",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "hostile_regt2_1760949092375_sw5pde_bn1_1760949092375_4spdx5",
+        "cell_index": 3298,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 29,
+      "location": {
+        "wgs84": {
+          "lat": 38.12451422062522,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279199"
+      },
+      "strength": 61,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn1_1760949092375_4spdx5_coy3_1760949092375_76u33y",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "hostile_regt2_1760949092375_sw5pde_bn1_1760949092375_4spdx5",
+        "cell_index": 3548,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2연대 - 2대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 40,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.14096924080647
+        },
+        "mgrs100": "52SDH247223"
+      },
+      "strength": 83,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn2_1760949092375_3dorbh",
+        "bnNo": "2",
+        "parentRegt": "hostile_regt2_1760949092375_sw5pde",
+        "parentBn": null,
+        "cell_index": 4290,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 33,
+      "location": {
+        "wgs84": {
+          "lat": 38.13888719942508,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279215"
+      },
+      "strength": 69,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn2_1760949092375_3dorbh_coy1_1760949092375_gs4um1",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "hostile_regt2_1760949092375_sw5pde_bn2_1760949092375_3dorbh",
+        "cell_index": 4048,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279223"
+      },
+      "strength": 88,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn2_1760949092375_3dorbh_coy2_1760949092375_mdrtzr",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "hostile_regt2_1760949092375_sw5pde_bn2_1760949092375_3dorbh",
+        "cell_index": 4298,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 37,
+      "location": {
+        "wgs84": {
+          "lat": 38.15326017822493,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279231"
+      },
+      "strength": 92,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn2_1760949092375_3dorbh_coy3_1760949092375_d71q5l",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "hostile_regt2_1760949092375_sw5pde_bn2_1760949092375_3dorbh",
+        "cell_index": 4548,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2연대 - 3대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 40,
+      "grid_y": 43,
+      "location": {
+        "wgs84": {
+          "lat": 38.17481964642472,
+          "lon": 128.14096924080647
+        },
+        "mgrs100": "52SDH247255"
+      },
+      "strength": 88,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn3_1760949092375_ge954z",
+        "bnNo": "3",
+        "parentRegt": "hostile_regt2_1760949092375_sw5pde",
+        "parentBn": null,
+        "cell_index": 5290,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 41,
+      "location": {
+        "wgs84": {
+          "lat": 38.16763315702479,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279247"
+      },
+      "strength": 99,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn3_1760949092375_ge954z_coy1_1760949092375_1oxnlm",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "hostile_regt2_1760949092375_sw5pde_bn3_1760949092375_ge954z",
+        "cell_index": 5048,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 43,
+      "location": {
+        "wgs84": {
+          "lat": 38.17481964642472,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279255"
+      },
+      "strength": 68,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn3_1760949092375_ge954z_coy2_1760949092375_plslw2",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "hostile_regt2_1760949092375_sw5pde_bn3_1760949092375_ge954z",
+        "cell_index": 5298,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 45,
+      "location": {
+        "wgs84": {
+          "lat": 38.18200613582465,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279263"
+      },
+      "strength": 97,
+      "meta": {
+        "id": "hostile_regt2_1760949092375_sw5pde_bn3_1760949092375_ge954z_coy3_1760949092375_ud327u",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "hostile_regt2_1760949092375_sw5pde_bn3_1760949092375_ge954z",
+        "cell_index": 5548,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "적사단 - 3연대",
+      "echelon": "IV",
+      "branch": "기보",
+      "grid_x": 27,
+      "grid_y": 58,
+      "location": {
+        "wgs84": {
+          "lat": 38.22871831692418,
+          "lon": 128.08157139695632
+        },
+        "mgrs100": "52SDH196315"
+      },
+      "strength": 82,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset",
+        "regtNo": "3",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 7152,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3연대 - 1대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 40,
+      "grid_y": 50,
+      "location": {
+        "wgs84": {
+          "lat": 38.19997235932447,
+          "lon": 128.14096924080647
+        },
+        "mgrs100": "52SDH247283"
+      },
+      "strength": 76,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn1_1760949092375_g092ht",
+        "bnNo": "1",
+        "parentRegt": "hostile_regt3_1760949092375_hikset",
+        "parentBn": null,
+        "cell_index": 6165,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 48,
+      "location": {
+        "wgs84": {
+          "lat": 38.19278586992454,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279275"
+      },
+      "strength": 68,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn1_1760949092375_g092ht_coy1_1760949092375_nsmmys",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "hostile_regt3_1760949092375_hikset_bn1_1760949092375_g092ht",
+        "cell_index": 5923,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 50,
+      "location": {
+        "wgs84": {
+          "lat": 38.19997235932447,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279283"
+      },
+      "strength": 75,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn1_1760949092375_g092ht_coy2_1760949092375_q0vt0j",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "hostile_regt3_1760949092375_hikset_bn1_1760949092375_g092ht",
+        "cell_index": 6173,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "1대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 52,
+      "location": {
+        "wgs84": {
+          "lat": 38.2071588487244,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH279291"
+      },
+      "strength": 84,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn1_1760949092375_g092ht_coy3_1760949092375_lmjnzo",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "hostile_regt3_1760949092375_hikset_bn1_1760949092375_g092ht",
+        "cell_index": 6423,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3연대 - 2대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 40,
+      "grid_y": 58,
+      "location": {
+        "wgs84": {
+          "lat": 38.22871831692418,
+          "lon": 128.14096924080647
+        },
+        "mgrs100": "52SDH248315"
+      },
+      "strength": 92,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn2_1760949092375_ki72or",
+        "bnNo": "2",
+        "parentRegt": "hostile_regt3_1760949092375_hikset",
+        "parentBn": null,
+        "cell_index": 7165,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 56,
+      "location": {
+        "wgs84": {
+          "lat": 38.22153182752425,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH280307"
+      },
+      "strength": 97,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn2_1760949092375_ki72or_coy1_1760949092375_dn3wm6",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "hostile_regt3_1760949092375_hikset_bn2_1760949092375_ki72or",
+        "cell_index": 6923,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 58,
+      "location": {
+        "wgs84": {
+          "lat": 38.22871831692418,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH280315"
+      },
+      "strength": 83,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn2_1760949092375_ki72or_coy2_1760949092375_mtol19",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "hostile_regt3_1760949092375_hikset_bn2_1760949092375_ki72or",
+        "cell_index": 7173,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "2대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 60,
+      "location": {
+        "wgs84": {
+          "lat": 38.23590480632411,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH280323"
+      },
+      "strength": 96,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn2_1760949092375_ki72or_coy3_1760949092375_pfyb97",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "hostile_regt3_1760949092375_hikset_bn2_1760949092375_ki72or",
+        "cell_index": 7423,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3연대 - 3대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 40,
+      "grid_y": 66,
+      "location": {
+        "wgs84": {
+          "lat": 38.25746427452389,
+          "lon": 128.14096924080647
+        },
+        "mgrs100": "52SDH248347"
+      },
+      "strength": 78,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn3_1760949092375_j0xgrx",
+        "bnNo": "3",
+        "parentRegt": "hostile_regt3_1760949092375_hikset",
+        "parentBn": null,
+        "cell_index": 8165,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 64,
+      "location": {
+        "wgs84": {
+          "lat": 38.25027778512396,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH280339"
+      },
+      "strength": 77,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn3_1760949092375_j0xgrx_coy1_1760949092375_9qnuzv",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "hostile_regt3_1760949092375_hikset_bn3_1760949092375_j0xgrx",
+        "cell_index": 7923,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 66,
+      "location": {
+        "wgs84": {
+          "lat": 38.25746427452389,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH280347"
+      },
+      "strength": 83,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn3_1760949092375_j0xgrx_coy2_1760949092375_m8njxc",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "hostile_regt3_1760949092375_hikset_bn3_1760949092375_j0xgrx",
+        "cell_index": 8173,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "3대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 48,
+      "grid_y": 68,
+      "location": {
+        "wgs84": {
+          "lat": 38.26465076392382,
+          "lon": 128.17752176009887
+        },
+        "mgrs100": "52SDH280354"
+      },
+      "strength": 74,
+      "meta": {
+        "id": "hostile_regt3_1760949092375_hikset_bn3_1760949092375_j0xgrx_coy3_1760949092375_xbq1gb",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "hostile_regt3_1760949092375_hikset_bn3_1760949092375_j0xgrx",
+        "cell_index": 8423,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "적사단 - 포병연대",
+      "echelon": "IV",
+      "branch": "포병",
+      "grid_x": 12,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.01303542328307
+        },
+        "mgrs100": "52SDH135224"
+      },
+      "strength": 79,
+      "meta": {
+        "id": "hostile_art_regt_1760949092375_bo8fg0",
+        "regtNo": "포병",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4262,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "포병연대 - 1대대",
+      "echelon": "III",
+      "branch": "포병",
+      "grid_x": 19,
+      "grid_y": 12,
+      "location": {
+        "wgs84": {
+          "lat": 38.06342906072583,
+          "lon": 128.04501887766392
+        },
+        "mgrs100": "52SDH162132"
+      },
+      "strength": 80,
+      "meta": {
+        "id": "hostile_art_regt_1760949092375_bo8fg0_bn1_1760949092375_jtnur2",
+        "bnNo": "1",
+        "parentRegt": "hostile_art_regt_1760949092375_bo8fg0",
+        "parentBn": null,
+        "cell_index": 1394,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "포병연대 - 2대대",
+      "echelon": "III",
+      "branch": "포병",
+      "grid_x": 19,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.04501887766392
+        },
+        "mgrs100": "52SDH163224"
+      },
+      "strength": 94,
+      "meta": {
+        "id": "hostile_art_regt_1760949092375_bo8fg0_bn2_1760949092375_f8bxg9",
+        "bnNo": "2",
+        "parentRegt": "hostile_art_regt_1760949092375_bo8fg0",
+        "parentBn": null,
+        "cell_index": 4269,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "포병연대 - 3대대",
+      "echelon": "III",
+      "branch": "포병",
+      "grid_x": 19,
+      "grid_y": 58,
+      "location": {
+        "wgs84": {
+          "lat": 38.22871831692418,
+          "lon": 128.04501887766392
+        },
+        "mgrs100": "52SDH164316"
+      },
+      "strength": 62,
+      "meta": {
+        "id": "hostile_art_regt_1760949092375_bo8fg0_bn3_1760949092375_auj9si",
+        "bnNo": "3",
+        "parentRegt": "hostile_art_regt_1760949092375_bo8fg0",
+        "parentBn": null,
+        "cell_index": 7144,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "연대 - 통신대대대대",
+      "echelon": "III",
+      "branch": "통신",
+      "grid_x": 8,
+      "grid_y": 36,
+      "location": {
+        "wgs84": {
+          "lat": 38.14966693352497,
+          "lon": 127.99475916363687
+        },
+        "mgrs100": "52SDH119228"
+      },
+      "strength": 95,
+      "meta": {
+        "id": "hostile_div_통신_1760949092384_qda69u",
+        "bnNo": "통신대대",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4383,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "연대 - 기갑대대대대",
+      "echelon": "III",
+      "branch": "기갑",
+      "grid_x": 8,
+      "grid_y": 34,
+      "location": {
+        "wgs84": {
+          "lat": 38.14248044412504,
+          "lon": 127.99475916363687
+        },
+        "mgrs100": "52SDH119221"
+      },
+      "strength": 95,
+      "meta": {
+        "id": "hostile_div_기갑_1760949092384_s91eqd",
+        "bnNo": "기갑대대",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4133,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "연대 - 공병대대대대",
+      "echelon": "III",
+      "branch": "공병",
+      "grid_x": 12,
+      "grid_y": 37,
+      "location": {
+        "wgs84": {
+          "lat": 38.15326017822493,
+          "lon": 128.01303542328307
+        },
+        "mgrs100": "52SDH135232"
+      },
+      "strength": 95,
+      "meta": {
+        "id": "hostile_div_공병_1760949092384_2zhs7g",
+        "bnNo": "공병대대",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4512,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "연대 - 방공대대대대",
+      "echelon": "III",
+      "branch": "방공",
+      "grid_x": 12,
+      "grid_y": 33,
+      "location": {
+        "wgs84": {
+          "lat": 38.13888719942508,
+          "lon": 128.01303542328307
+        },
+        "mgrs100": "52SDH135216"
+      },
+      "strength": 95,
+      "meta": {
+        "id": "hostile_div_방공_1760949092384_irac5l",
+        "bnNo": "방공대대",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4012,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "대대 - 기갑중대중대",
+      "echelon": "II",
+      "branch": "기갑",
+      "grid_x": 30,
+      "grid_y": 13,
+      "location": {
+        "wgs84": {
+          "lat": 38.067022305425795,
+          "lon": 128.09527859169097
+        },
+        "mgrs100": "52SDH206136"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "hostile_regt_1_기갑_1760949092384_aseq7e",
+        "coyNo": "기갑중대",
+        "parentRegt": "hostile_regt1_1760949092375_ri16cr",
+        "parentBn": null,
+        "cell_index": 1530,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "대대 - 방공중대중대",
+      "echelon": "II",
+      "branch": "방공",
+      "grid_x": 30,
+      "grid_y": 11,
+      "location": {
+        "wgs84": {
+          "lat": 38.05983581602587,
+          "lon": 128.09527859169097
+        },
+        "mgrs100": "52SDH206128"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "hostile_regt_1_방공_1760949092384_omfj1u",
+        "coyNo": "방공중대",
+        "parentRegt": "hostile_regt1_1760949092375_ri16cr",
+        "parentBn": null,
+        "cell_index": 1280,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "대대 - 기갑중대중대",
+      "echelon": "II",
+      "branch": "기갑",
+      "grid_x": 30,
+      "grid_y": 36,
+      "location": {
+        "wgs84": {
+          "lat": 38.14966693352497,
+          "lon": 128.09527859169097
+        },
+        "mgrs100": "52SDH207228"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "hostile_regt_2_기갑_1760949092384_c4yn28",
+        "coyNo": "기갑중대",
+        "parentRegt": "hostile_regt2_1760949092375_sw5pde",
+        "parentBn": null,
+        "cell_index": 4405,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "대대 - 방공중대중대",
+      "echelon": "II",
+      "branch": "방공",
+      "grid_x": 30,
+      "grid_y": 34,
+      "location": {
+        "wgs84": {
+          "lat": 38.14248044412504,
+          "lon": 128.09527859169097
+        },
+        "mgrs100": "52SDH207220"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "hostile_regt_2_방공_1760949092384_i38ifc",
+        "coyNo": "방공중대",
+        "parentRegt": "hostile_regt2_1760949092375_sw5pde",
+        "parentBn": null,
+        "cell_index": 4155,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "대대 - 기갑중대중대",
+      "echelon": "II",
+      "branch": "기갑",
+      "grid_x": 30,
+      "grid_y": 59,
+      "location": {
+        "wgs84": {
+          "lat": 38.232311561624144,
+          "lon": 128.09527859169097
+        },
+        "mgrs100": "52SDH208319"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "hostile_regt_3_기갑_1760949092384_l7kcz4",
+        "coyNo": "기갑중대",
+        "parentRegt": "hostile_regt3_1760949092375_hikset",
+        "parentBn": null,
+        "cell_index": 7280,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "대대 - 방공중대중대",
+      "echelon": "II",
+      "branch": "방공",
+      "grid_x": 30,
+      "grid_y": 57,
+      "location": {
+        "wgs84": {
+          "lat": 38.225125072224216,
+          "lon": 128.09527859169097
+        },
+        "mgrs100": "52SDH208311"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "hostile_regt_3_방공_1760949092384_ze416w",
+        "coyNo": "방공중대",
+        "parentRegt": "hostile_regt3_1760949092375_hikset",
+        "parentBn": null,
+        "cell_index": 7030,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "대대 - 기갑중대중대",
+      "echelon": "II",
+      "branch": "기갑",
+      "grid_x": 15,
+      "grid_y": 36,
+      "location": {
+        "wgs84": {
+          "lat": 38.14966693352497,
+          "lon": 128.02674261801772
+        },
+        "mgrs100": "52SDH147228"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "hostile_regt_포병_기갑_1760949092384_1hlf0t",
+        "coyNo": "기갑중대",
+        "parentRegt": "hostile_art_regt_1760949092375_bo8fg0",
+        "parentBn": null,
+        "cell_index": 4390,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "hostile",
+      "name": "대대 - 방공중대중대",
+      "echelon": "II",
+      "branch": "방공",
+      "grid_x": 15,
+      "grid_y": 34,
+      "location": {
+        "wgs84": {
+          "lat": 38.14248044412504,
+          "lon": 128.02674261801772
+        },
+        "mgrs100": "52SDH147220"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "hostile_regt_포병_방공_1760949092384_eessv2",
+        "coyNo": "방공중대",
+        "parentRegt": "hostile_art_regt_1760949092375_bo8fg0",
+        "parentBn": null,
+        "cell_index": 4140,
+        "quadrant": 1
+      }
+    }
+  ],
+  "friendly_units": [
+    {
+      "side": "friendly",
+      "name": "사단",
+      "echelon": "XX",
+      "branch": "기보",
+      "grid_x": 122,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.51563256355354
+        },
+        "mgrs100": "52SDH575221"
+      },
+      "strength": 83,
+      "meta": {
+        "id": "auto_friendly_div_1760949092374_vxks1c",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4372,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "아군사단 - 1연대",
+      "echelon": "IV",
+      "branch": "기보",
+      "grid_x": 99,
+      "grid_y": 12,
+      "location": {
+        "wgs84": {
+          "lat": 38.06342906072583,
+          "lon": 128.4105440705879
+        },
+        "mgrs100": "52SDH482130"
+      },
+      "strength": 86,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0",
+        "regtNo": "1",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 1474,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1연대 - 1대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 86,
+      "grid_y": 4,
+      "location": {
+        "wgs84": {
+          "lat": 38.03468310312612,
+          "lon": 128.35114622673774
+        },
+        "mgrs100": "52SDH430098"
+      },
+      "strength": 87,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn1_1760949092375_1sidxg",
+        "bnNo": "1",
+        "parentRegt": "friendly_regt1_1760949092375_sed8y0",
+        "parentBn": null,
+        "cell_index": 461,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 2,
+      "location": {
+        "wgs84": {
+          "lat": 38.02749661372619,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH398090"
+      },
+      "strength": 85,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn1_1760949092375_1sidxg_coy1_1760949092375_xos0z4",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "friendly_regt1_1760949092375_sed8y0_bn1_1760949092375_1sidxg",
+        "cell_index": 203,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 4,
+      "location": {
+        "wgs84": {
+          "lat": 38.03468310312612,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH398098"
+      },
+      "strength": 95,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn1_1760949092375_1sidxg_coy2_1760949092375_bjzdm1",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "friendly_regt1_1760949092375_sed8y0_bn1_1760949092375_1sidxg",
+        "cell_index": 453,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 6,
+      "location": {
+        "wgs84": {
+          "lat": 38.04186959252605,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH398106"
+      },
+      "strength": 82,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn1_1760949092375_1sidxg_coy3_1760949092375_gsbxs5",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "friendly_regt1_1760949092375_sed8y0_bn1_1760949092375_1sidxg",
+        "cell_index": 703,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1연대 - 2대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 86,
+      "grid_y": 12,
+      "location": {
+        "wgs84": {
+          "lat": 38.06342906072583,
+          "lon": 128.35114622673774
+        },
+        "mgrs100": "52SDH430130"
+      },
+      "strength": 87,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn2_1760949092375_7urje8",
+        "bnNo": "2",
+        "parentRegt": "friendly_regt1_1760949092375_sed8y0",
+        "parentBn": null,
+        "cell_index": 1461,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 10,
+      "location": {
+        "wgs84": {
+          "lat": 38.0562425713259,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH398122"
+      },
+      "strength": 91,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn2_1760949092375_7urje8_coy1_1760949092375_gtzvws",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "friendly_regt1_1760949092375_sed8y0_bn2_1760949092375_7urje8",
+        "cell_index": 1203,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 12,
+      "location": {
+        "wgs84": {
+          "lat": 38.06342906072583,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH398130"
+      },
+      "strength": 88,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn2_1760949092375_7urje8_coy2_1760949092375_6k2a8d",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "friendly_regt1_1760949092375_sed8y0_bn2_1760949092375_7urje8",
+        "cell_index": 1453,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 14,
+      "location": {
+        "wgs84": {
+          "lat": 38.07061555012576,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH398138"
+      },
+      "strength": 83,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn2_1760949092375_7urje8_coy3_1760949092375_s070mv",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "friendly_regt1_1760949092375_sed8y0_bn2_1760949092375_7urje8",
+        "cell_index": 1703,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1연대 - 3대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 86,
+      "grid_y": 20,
+      "location": {
+        "wgs84": {
+          "lat": 38.09217501832555,
+          "lon": 128.35114622673774
+        },
+        "mgrs100": "52SDH431162"
+      },
+      "strength": 85,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn3_1760949092375_710s0m",
+        "bnNo": "3",
+        "parentRegt": "friendly_regt1_1760949092375_sed8y0",
+        "parentBn": null,
+        "cell_index": 2461,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 18,
+      "location": {
+        "wgs84": {
+          "lat": 38.08498852892562,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH398154"
+      },
+      "strength": 93,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn3_1760949092375_710s0m_coy1_1760949092375_9w8h5b",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "friendly_regt1_1760949092375_sed8y0_bn3_1760949092375_710s0m",
+        "cell_index": 2203,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 20,
+      "location": {
+        "wgs84": {
+          "lat": 38.09217501832555,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH398162"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn3_1760949092375_710s0m_coy2_1760949092375_n6d6nj",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "friendly_regt1_1760949092375_sed8y0_bn3_1760949092375_710s0m",
+        "cell_index": 2453,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 22,
+      "location": {
+        "wgs84": {
+          "lat": 38.099361507725476,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399170"
+      },
+      "strength": 73,
+      "meta": {
+        "id": "friendly_regt1_1760949092375_sed8y0_bn3_1760949092375_710s0m_coy3_1760949092375_khwke5",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "friendly_regt1_1760949092375_sed8y0_bn3_1760949092375_710s0m",
+        "cell_index": 2703,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "아군사단 - 2연대",
+      "echelon": "IV",
+      "branch": "기보",
+      "grid_x": 99,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.4105440705879
+        },
+        "mgrs100": "52SDH483221"
+      },
+      "strength": 82,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky",
+        "regtNo": "2",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4349,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2연대 - 1대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 86,
+      "grid_y": 27,
+      "location": {
+        "wgs84": {
+          "lat": 38.117327731225295,
+          "lon": 128.35114622673774
+        },
+        "mgrs100": "52SDH431190"
+      },
+      "strength": 85,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn1_1760949092375_ei7mqx",
+        "bnNo": "1",
+        "parentRegt": "friendly_regt2_1760949092375_vw8kky",
+        "parentBn": null,
+        "cell_index": 3336,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 25,
+      "location": {
+        "wgs84": {
+          "lat": 38.11014124182537,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399182"
+      },
+      "strength": 94,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn1_1760949092375_ei7mqx_coy1_1760949092375_m4uyxo",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "friendly_regt2_1760949092375_vw8kky_bn1_1760949092375_ei7mqx",
+        "cell_index": 3078,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 27,
+      "location": {
+        "wgs84": {
+          "lat": 38.117327731225295,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399190"
+      },
+      "strength": 89,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn1_1760949092375_ei7mqx_coy2_1760949092375_wtpgvt",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "friendly_regt2_1760949092375_vw8kky_bn1_1760949092375_ei7mqx",
+        "cell_index": 3328,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 29,
+      "location": {
+        "wgs84": {
+          "lat": 38.12451422062522,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399198"
+      },
+      "strength": 71,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn1_1760949092375_ei7mqx_coy3_1760949092375_9iyix5",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "friendly_regt2_1760949092375_vw8kky_bn1_1760949092375_ei7mqx",
+        "cell_index": 3578,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2연대 - 2대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 86,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.35114622673774
+        },
+        "mgrs100": "52SDH431222"
+      },
+      "strength": 76,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn2_1760949092375_ici0qq",
+        "bnNo": "2",
+        "parentRegt": "friendly_regt2_1760949092375_vw8kky",
+        "parentBn": null,
+        "cell_index": 4336,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 33,
+      "location": {
+        "wgs84": {
+          "lat": 38.13888719942508,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399214"
+      },
+      "strength": 70,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn2_1760949092375_ici0qq_coy1_1760949092375_gfcyf2",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "friendly_regt2_1760949092375_vw8kky_bn2_1760949092375_ici0qq",
+        "cell_index": 4078,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399222"
+      },
+      "strength": 77,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn2_1760949092375_ici0qq_coy2_1760949092375_6fms0w",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "friendly_regt2_1760949092375_vw8kky_bn2_1760949092375_ici0qq",
+        "cell_index": 4328,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 37,
+      "location": {
+        "wgs84": {
+          "lat": 38.15326017822493,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399230"
+      },
+      "strength": 80,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn2_1760949092375_ici0qq_coy3_1760949092375_4fe98u",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "friendly_regt2_1760949092375_vw8kky_bn2_1760949092375_ici0qq",
+        "cell_index": 4578,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2연대 - 3대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 86,
+      "grid_y": 43,
+      "location": {
+        "wgs84": {
+          "lat": 38.17481964642472,
+          "lon": 128.35114622673774
+        },
+        "mgrs100": "52SDH431254"
+      },
+      "strength": 84,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn3_1760949092375_f0d3r3",
+        "bnNo": "3",
+        "parentRegt": "friendly_regt2_1760949092375_vw8kky",
+        "parentBn": null,
+        "cell_index": 5336,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 41,
+      "location": {
+        "wgs84": {
+          "lat": 38.16763315702479,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399246"
+      },
+      "strength": 99,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn3_1760949092375_f0d3r3_coy1_1760949092375_pw4ku2",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "friendly_regt2_1760949092375_vw8kky_bn3_1760949092375_f0d3r3",
+        "cell_index": 5078,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 43,
+      "location": {
+        "wgs84": {
+          "lat": 38.17481964642472,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399254"
+      },
+      "strength": 68,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn3_1760949092375_f0d3r3_coy2_1760949092375_zsmegv",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "friendly_regt2_1760949092375_vw8kky_bn3_1760949092375_f0d3r3",
+        "cell_index": 5328,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 45,
+      "location": {
+        "wgs84": {
+          "lat": 38.18200613582465,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399262"
+      },
+      "strength": 85,
+      "meta": {
+        "id": "friendly_regt2_1760949092375_vw8kky_bn3_1760949092375_f0d3r3_coy3_1760949092375_rzi9fu",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "friendly_regt2_1760949092375_vw8kky_bn3_1760949092375_f0d3r3",
+        "cell_index": 5578,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "아군사단 - 3연대",
+      "echelon": "IV",
+      "branch": "기보",
+      "grid_x": 99,
+      "grid_y": 58,
+      "location": {
+        "wgs84": {
+          "lat": 38.22871831692418,
+          "lon": 128.4105440705879
+        },
+        "mgrs100": "52SDH484313"
+      },
+      "strength": 85,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn",
+        "regtNo": "3",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 7224,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3연대 - 1대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 86,
+      "grid_y": 50,
+      "location": {
+        "wgs84": {
+          "lat": 38.19997235932447,
+          "lon": 128.35114622673774
+        },
+        "mgrs100": "52SDH431282"
+      },
+      "strength": 81,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn1_1760949092375_t3ag3t",
+        "bnNo": "1",
+        "parentRegt": "friendly_regt3_1760949092375_alufpn",
+        "parentBn": null,
+        "cell_index": 6211,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 48,
+      "location": {
+        "wgs84": {
+          "lat": 38.19278586992454,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399274"
+      },
+      "strength": 63,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn1_1760949092375_t3ag3t_coy1_1760949092375_m0k2zh",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "friendly_regt3_1760949092375_alufpn_bn1_1760949092375_t3ag3t",
+        "cell_index": 5953,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 50,
+      "location": {
+        "wgs84": {
+          "lat": 38.19997235932447,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399282"
+      },
+      "strength": 99,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn1_1760949092375_t3ag3t_coy2_1760949092375_px23bo",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "friendly_regt3_1760949092375_alufpn_bn1_1760949092375_t3ag3t",
+        "cell_index": 6203,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "1대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 52,
+      "location": {
+        "wgs84": {
+          "lat": 38.2071588487244,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH399290"
+      },
+      "strength": 81,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn1_1760949092375_t3ag3t_coy3_1760949092375_3d8gnn",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "friendly_regt3_1760949092375_alufpn_bn1_1760949092375_t3ag3t",
+        "cell_index": 6453,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3연대 - 2대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 86,
+      "grid_y": 58,
+      "location": {
+        "wgs84": {
+          "lat": 38.22871831692418,
+          "lon": 128.35114622673774
+        },
+        "mgrs100": "52SDH432313"
+      },
+      "strength": 84,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn2_1760949092375_yu25oq",
+        "bnNo": "2",
+        "parentRegt": "friendly_regt3_1760949092375_alufpn",
+        "parentBn": null,
+        "cell_index": 7211,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 56,
+      "location": {
+        "wgs84": {
+          "lat": 38.22153182752425,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH400306"
+      },
+      "strength": 85,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn2_1760949092375_yu25oq_coy1_1760949092375_qogktf",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "friendly_regt3_1760949092375_alufpn_bn2_1760949092375_yu25oq",
+        "cell_index": 6953,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 58,
+      "location": {
+        "wgs84": {
+          "lat": 38.22871831692418,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH400314"
+      },
+      "strength": 84,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn2_1760949092375_yu25oq_coy2_1760949092375_9jzmut",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "friendly_regt3_1760949092375_alufpn_bn2_1760949092375_yu25oq",
+        "cell_index": 7203,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "2대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 60,
+      "location": {
+        "wgs84": {
+          "lat": 38.23590480632411,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH400322"
+      },
+      "strength": 84,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn2_1760949092375_yu25oq_coy3_1760949092375_j6g3g6",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "friendly_regt3_1760949092375_alufpn_bn2_1760949092375_yu25oq",
+        "cell_index": 7453,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3연대 - 3대대",
+      "echelon": "III",
+      "branch": "기보",
+      "grid_x": 86,
+      "grid_y": 66,
+      "location": {
+        "wgs84": {
+          "lat": 38.25746427452389,
+          "lon": 128.35114622673774
+        },
+        "mgrs100": "52SDH432345"
+      },
+      "strength": 89,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn3_1760949092375_frwfo2",
+        "bnNo": "3",
+        "parentRegt": "friendly_regt3_1760949092375_alufpn",
+        "parentBn": null,
+        "cell_index": 8211,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3대대 - 1중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 64,
+      "location": {
+        "wgs84": {
+          "lat": 38.25027778512396,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH400338"
+      },
+      "strength": 81,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn3_1760949092375_frwfo2_coy1_1760949092375_bmcrax",
+        "coyNo": "1",
+        "parentRegt": null,
+        "parentBn": "friendly_regt3_1760949092375_alufpn_bn3_1760949092375_frwfo2",
+        "cell_index": 7953,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3대대 - 2중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 66,
+      "location": {
+        "wgs84": {
+          "lat": 38.25746427452389,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH400346"
+      },
+      "strength": 91,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn3_1760949092375_frwfo2_coy2_1760949092375_8sm5ya",
+        "coyNo": "2",
+        "parentRegt": null,
+        "parentBn": "friendly_regt3_1760949092375_alufpn_bn3_1760949092375_frwfo2",
+        "cell_index": 8203,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "3대대 - 3중대",
+      "echelon": "II",
+      "branch": "기보",
+      "grid_x": 78,
+      "grid_y": 68,
+      "location": {
+        "wgs84": {
+          "lat": 38.26465076392382,
+          "lon": 128.31459370744534
+        },
+        "mgrs100": "52SDH400354"
+      },
+      "strength": 94,
+      "meta": {
+        "id": "friendly_regt3_1760949092375_alufpn_bn3_1760949092375_frwfo2_coy3_1760949092375_0oln61",
+        "coyNo": "3",
+        "parentRegt": null,
+        "parentBn": "friendly_regt3_1760949092375_alufpn_bn3_1760949092375_frwfo2",
+        "cell_index": 8453,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "아군사단 - 포병연대",
+      "echelon": "IV",
+      "branch": "포병",
+      "grid_x": 114,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.47908004426114
+        },
+        "mgrs100": "52SDH543221"
+      },
+      "strength": 78,
+      "meta": {
+        "id": "friendly_art_regt_1760949092375_f9gy1c",
+        "regtNo": "포병",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4364,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "포병연대 - 1대대",
+      "echelon": "III",
+      "branch": "포병",
+      "grid_x": 107,
+      "grid_y": 12,
+      "location": {
+        "wgs84": {
+          "lat": 38.06342906072583,
+          "lon": 128.4470965898803
+        },
+        "mgrs100": "52SDH514129"
+      },
+      "strength": 88,
+      "meta": {
+        "id": "friendly_art_regt_1760949092375_f9gy1c_bn1_1760949092375_n0zjnm",
+        "bnNo": "1",
+        "parentRegt": "friendly_art_regt_1760949092375_f9gy1c",
+        "parentBn": null,
+        "cell_index": 1482,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "포병연대 - 2대대",
+      "echelon": "III",
+      "branch": "포병",
+      "grid_x": 107,
+      "grid_y": 35,
+      "location": {
+        "wgs84": {
+          "lat": 38.146073688825005,
+          "lon": 128.4470965898803
+        },
+        "mgrs100": "52SDH515221"
+      },
+      "strength": 86,
+      "meta": {
+        "id": "friendly_art_regt_1760949092375_f9gy1c_bn2_1760949092375_tkj8hd",
+        "bnNo": "2",
+        "parentRegt": "friendly_art_regt_1760949092375_f9gy1c",
+        "parentBn": null,
+        "cell_index": 4357,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "포병연대 - 3대대",
+      "echelon": "III",
+      "branch": "포병",
+      "grid_x": 107,
+      "grid_y": 58,
+      "location": {
+        "wgs84": {
+          "lat": 38.22871831692418,
+          "lon": 128.4470965898803
+        },
+        "mgrs100": "52SDH516313"
+      },
+      "strength": 61,
+      "meta": {
+        "id": "friendly_art_regt_1760949092375_f9gy1c_bn3_1760949092375_z5ccp0",
+        "bnNo": "3",
+        "parentRegt": "friendly_art_regt_1760949092375_f9gy1c",
+        "parentBn": null,
+        "cell_index": 7232,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "연대 - 통신대대대대",
+      "echelon": "III",
+      "branch": "통신",
+      "grid_x": 118,
+      "grid_y": 36,
+      "location": {
+        "wgs84": {
+          "lat": 38.14966693352497,
+          "lon": 128.49735630390734
+        },
+        "mgrs100": "52SDH559225"
+      },
+      "strength": 95,
+      "meta": {
+        "id": "friendly_div_통신_1760949092384_lk2vmi",
+        "bnNo": "통신대대",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4493,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "연대 - 기갑대대대대",
+      "echelon": "III",
+      "branch": "기갑",
+      "grid_x": 118,
+      "grid_y": 34,
+      "location": {
+        "wgs84": {
+          "lat": 38.14248044412504,
+          "lon": 128.49735630390734
+        },
+        "mgrs100": "52SDH559217"
+      },
+      "strength": 95,
+      "meta": {
+        "id": "friendly_div_기갑_1760949092384_rr8bz3",
+        "bnNo": "기갑대대",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4243,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "연대 - 공병대대대대",
+      "echelon": "III",
+      "branch": "공병",
+      "grid_x": 114,
+      "grid_y": 37,
+      "location": {
+        "wgs84": {
+          "lat": 38.15326017822493,
+          "lon": 128.47908004426114
+        },
+        "mgrs100": "52SDH543229"
+      },
+      "strength": 95,
+      "meta": {
+        "id": "friendly_div_공병_1760949092384_99hhae",
+        "bnNo": "공병대대",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4614,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "연대 - 방공대대대대",
+      "echelon": "III",
+      "branch": "방공",
+      "grid_x": 114,
+      "grid_y": 33,
+      "location": {
+        "wgs84": {
+          "lat": 38.13888719942508,
+          "lon": 128.47908004426114
+        },
+        "mgrs100": "52SDH543213"
+      },
+      "strength": 95,
+      "meta": {
+        "id": "friendly_div_방공_1760949092384_9t1lel",
+        "bnNo": "방공대대",
+        "parentRegt": null,
+        "parentBn": null,
+        "cell_index": 4114,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "대대 - 기갑중대중대",
+      "echelon": "II",
+      "branch": "기갑",
+      "grid_x": 96,
+      "grid_y": 13,
+      "location": {
+        "wgs84": {
+          "lat": 38.067022305425795,
+          "lon": 128.39683687585324
+        },
+        "mgrs100": "52SDH470134"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "friendly_regt_1_기갑_1760949092384_p8659u",
+        "coyNo": "기갑중대",
+        "parentRegt": "friendly_regt1_1760949092375_sed8y0",
+        "parentBn": null,
+        "cell_index": 1596,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "대대 - 방공중대중대",
+      "echelon": "II",
+      "branch": "방공",
+      "grid_x": 96,
+      "grid_y": 11,
+      "location": {
+        "wgs84": {
+          "lat": 38.05983581602587,
+          "lon": 128.39683687585324
+        },
+        "mgrs100": "52SDH470126"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "friendly_regt_1_방공_1760949092384_d0skr8",
+        "coyNo": "방공중대",
+        "parentRegt": "friendly_regt1_1760949092375_sed8y0",
+        "parentBn": null,
+        "cell_index": 1346,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "대대 - 기갑중대중대",
+      "echelon": "II",
+      "branch": "기갑",
+      "grid_x": 96,
+      "grid_y": 36,
+      "location": {
+        "wgs84": {
+          "lat": 38.14966693352497,
+          "lon": 128.39683687585324
+        },
+        "mgrs100": "52SDH471225"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "friendly_regt_2_기갑_1760949092384_szet7k",
+        "coyNo": "기갑중대",
+        "parentRegt": "friendly_regt2_1760949092375_vw8kky",
+        "parentBn": null,
+        "cell_index": 4471,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "대대 - 방공중대중대",
+      "echelon": "II",
+      "branch": "방공",
+      "grid_x": 96,
+      "grid_y": 34,
+      "location": {
+        "wgs84": {
+          "lat": 38.14248044412504,
+          "lon": 128.39683687585324
+        },
+        "mgrs100": "52SDH471217"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "friendly_regt_2_방공_1760949092384_twoh9o",
+        "coyNo": "방공중대",
+        "parentRegt": "friendly_regt2_1760949092375_vw8kky",
+        "parentBn": null,
+        "cell_index": 4221,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "대대 - 기갑중대중대",
+      "echelon": "II",
+      "branch": "기갑",
+      "grid_x": 96,
+      "grid_y": 59,
+      "location": {
+        "wgs84": {
+          "lat": 38.232311561624144,
+          "lon": 128.39683687585324
+        },
+        "mgrs100": "52SDH472317"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "friendly_regt_3_기갑_1760949092384_0lq46i",
+        "coyNo": "기갑중대",
+        "parentRegt": "friendly_regt3_1760949092375_alufpn",
+        "parentBn": null,
+        "cell_index": 7346,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "대대 - 방공중대중대",
+      "echelon": "II",
+      "branch": "방공",
+      "grid_x": 96,
+      "grid_y": 57,
+      "location": {
+        "wgs84": {
+          "lat": 38.225125072224216,
+          "lon": 128.39683687585324
+        },
+        "mgrs100": "52SDH472309"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "friendly_regt_3_방공_1760949092384_irhg1i",
+        "coyNo": "방공중대",
+        "parentRegt": "friendly_regt3_1760949092375_alufpn",
+        "parentBn": null,
+        "cell_index": 7096,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "대대 - 기갑중대중대",
+      "echelon": "II",
+      "branch": "기갑",
+      "grid_x": 111,
+      "grid_y": 36,
+      "location": {
+        "wgs84": {
+          "lat": 38.14966693352497,
+          "lon": 128.4653728495265
+        },
+        "mgrs100": "52SDH531225"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "friendly_regt_포병_기갑_1760949092384_its2xm",
+        "coyNo": "기갑중대",
+        "parentRegt": "friendly_art_regt_1760949092375_f9gy1c",
+        "parentBn": null,
+        "cell_index": 4486,
+        "quadrant": 1
+      }
+    },
+    {
+      "side": "friendly",
+      "name": "대대 - 방공중대중대",
+      "echelon": "II",
+      "branch": "방공",
+      "grid_x": 111,
+      "grid_y": 34,
+      "location": {
+        "wgs84": {
+          "lat": 38.14248044412504,
+          "lon": 128.4653728495265
+        },
+        "mgrs100": "52SDH531217"
+      },
+      "strength": 90,
+      "meta": {
+        "id": "friendly_regt_포병_방공_1760949092384_dhkp1w",
+        "coyNo": "방공중대",
+        "parentRegt": "friendly_art_regt_1760949092375_f9gy1c",
+        "parentBn": null,
+        "cell_index": 4236,
+        "quadrant": 1
+      }
+    }
+  ]
+}

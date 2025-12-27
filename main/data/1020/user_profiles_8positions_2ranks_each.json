@@ -1,0 +1,148 @@
+{
+  "userProfiles": [
+    {
+      "userId": "user-001",
+      "functionOffice": "정보",
+      "position": "전투피해평가담당",
+      "duty": "미정",
+      "rank": "대령",
+      "role": "정보 판단",
+      "userGroup": "사단"
+    },
+    {
+      "userId": "user-002",
+      "functionOffice": "정보",
+      "position": "전투피해평가담당",
+      "duty": "미정",
+      "rank": "소위",
+      "role": "정보 판단",
+      "userGroup": "대대"
+    },
+    {
+      "userId": "user-003",
+      "functionOffice": "정보",
+      "position": "대침투담당",
+      "duty": "미정",
+      "rank": "대위",
+      "role": "정보 판단",
+      "userGroup": "사단"
+    },
+    {
+      "userId": "user-004",
+      "functionOffice": "정보",
+      "position": "대침투담당",
+      "duty": "미정",
+      "rank": "중위",
+      "role": "정보 판단",
+      "userGroup": "사단"
+    },
+    {
+      "userId": "user-005",
+      "functionOffice": "정보",
+      "position": "화생방담당",
+      "duty": "미정",
+      "rank": "대령",
+      "role": "정보 판단",
+      "userGroup": "대대"
+    },
+    {
+      "userId": "user-006",
+      "functionOffice": "정보",
+      "position": "화생방담당",
+      "duty": "미정",
+      "rank": "소위",
+      "role": "정보 판단",
+      "userGroup": "대대"
+    },
+    {
+      "userId": "user-007",
+      "functionOffice": "작전",
+      "position": "작전계획담당",
+      "duty": "미정",
+      "rank": "중령",
+      "role": "작전 계획",
+      "userGroup": "대대"
+    },
+    {
+      "userId": "user-008",
+      "functionOffice": "작전",
+      "position": "작전계획담당",
+      "duty": "미정",
+      "rank": "소위",
+      "role": "작전 계획",
+      "userGroup": "연대"
+    },
+    {
+      "userId": "user-009",
+      "functionOffice": "작전",
+      "position": "방공계획담당",
+      "duty": "미정",
+      "rank": "소위",
+      "role": "작전 계획",
+      "userGroup": "사단"
+    },
+    {
+      "userId": "user-010",
+      "functionOffice": "작전",
+      "position": "방공계획담당",
+      "duty": "미정",
+      "rank": "대령",
+      "role": "작전 계획",
+      "userGroup": "사단"
+    },
+    {
+      "userId": "user-011",
+      "functionOffice": "작전",
+      "position": "통합방위협조담당",
+      "duty": "미정",
+      "rank": "중위",
+      "role": "작전 계획",
+      "userGroup": "대대"
+    },
+    {
+      "userId": "user-012",
+      "functionOffice": "작전",
+      "position": "통합방위협조담당",
+      "duty": "미정",
+      "rank": "중령",
+      "role": "작전 계획",
+      "userGroup": "사단"
+    },
+    {
+      "userId": "user-013",
+      "functionOffice": "화력",
+      "position": "화력계획담당",
+      "duty": "미정",
+      "rank": "중령",
+      "role": "화력 운용",
+      "userGroup": "대대"
+    },
+    {
+      "userId": "user-014",
+      "functionOffice": "화력",
+      "position": "화력계획담당",
+      "duty": "미정",
+      "rank": "중위",
+      "role": "화력 운용",
+      "userGroup": "대대"
+    },
+    {
+      "userId": "user-015",
+      "functionOffice": "화력",
+      "position": "화력운용담당",
+      "duty": "미정",
+      "rank": "대령",
+      "role": "화력 운용",
+      "userGroup": "연대"
+    },
+    {
+      "userId": "user-016",
+      "functionOffice": "화력",
+      "position": "화력운용담당",
+      "duty": "미정",
+      "rank": "중령",
+      "role": "화력 운용",
+      "userGroup": "사단"
+    }
+  ]
+}

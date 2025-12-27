@@ -1,0 +1,184 @@
+{
+  "userProfiles": [
+    {
+      "userId": "user-001",
+      "functionOffice": "작전",
+      "position": "작전장교",
+      "duty": "작전계획/전개 통제",
+      "rank": "대위",
+      "role": "작전 통제",
+      "userGroup": "대대 본부"
+    },
+    {
+      "userId": "user-002",
+      "functionOffice": "정보",
+      "position": "정보장교",
+      "duty": "정찰·감시 정보분석",
+      "rank": "소령",
+      "role": "정보 판단",
+      "userGroup": "사단 본부"
+    },
+    {
+      "userId": "user-003",
+      "functionOffice": "통신",
+      "position": "통신운용 부사관",
+      "duty": "전술망/암호/C4I 운용",
+      "rank": "중사",
+      "role": "통신 운용",
+      "userGroup": "대대 통신중대"
+    },
+    {
+      "userId": "user-004",
+      "functionOffice": "군수",
+      "position": "군수장교",
+      "duty": "보급·정비·유지",
+      "rank": "대위",
+      "role": "병참/정비 통제",
+      "userGroup": "군수지원부"
+    },
+    {
+      "userId": "user-005",
+      "functionOffice": "인사/교육",
+      "position": "교육장교",
+      "duty": "훈련계획/전투준비태세",
+      "rank": "중위",
+      "role": "교육·훈련 관리",
+      "userGroup": "사단 교육훈련과"
+    },
+    {
+      "userId": "user-006",
+      "functionOffice": "방공/감시",
+      "position": "방공통제장교",
+      "duty": "레이더/사격통제 운용",
+      "rank": "대위",
+      "role": "방공 통제",
+      "userGroup": "방공대대"
+    },
+    {
+      "userId": "user-007",
+      "functionOffice": "사이버",
+      "position": "보안장교",
+      "duty": "사이버 방어/침투 테스트",
+      "rank": "대위",
+      "role": "사이버 방어",
+      "userGroup": "전산보안실"
+    },
+    {
+      "userId": "user-008",
+      "functionOffice": "공병",
+      "position": "공병장교",
+      "duty": "시설/교량/도로 보수",
+      "rank": "대위",
+      "role": "시설 보전",
+      "userGroup": "공병대대"
+    },
+    {
+      "userId": "user-009",
+      "functionOffice": "의무",
+      "position": "군의관",
+      "duty": "의료지원/역학대응",
+      "rank": "대위",
+      "role": "의무 지원",
+      "userGroup": "의무대"
+    },
+    {
+      "userId": "user-010",
+      "functionOffice": "해군작전",
+      "position": "함정작전장교",
+      "duty": "해상작전/감시",
+      "rank": "중위",
+      "role": "해상 작전",
+      "userGroup": "해군 기동전단"
+    },
+    {
+      "userId": "user-011",
+      "functionOffice": "항공정비",
+      "position": "정비장교",
+      "duty": "항공기 정비/품질관리",
+      "rank": "대위",
+      "role": "항공 정비",
+      "userGroup": "항공정비대대"
+    },
+    {
+      "userId": "user-012",
+      "functionOffice": "포병",
+      "position": "포병장교",
+      "duty": "화력 계획/관측",
+      "rank": "대위",
+      "role": "화력 운용",
+      "userGroup": "포병연대"
+    },
+    {
+      "userId": "user-013",
+      "functionOffice": "기갑/기동",
+      "position": "기갑장교",
+      "duty": "전차/장갑차 배치",
+      "rank": "대위",
+      "role": "기동 통제",
+      "userGroup": "기갑여단"
+    },
+    {
+      "userId": "user-014",
+      "functionOffice": "해안경비",
+      "position": "경비대장교",
+      "duty": "연안 감시/경계",
+      "rank": "중위",
+      "role": "연안 경계",
+      "userGroup": "해안 경비대"
+    },
+    {
+      "userId": "user-015",
+      "functionOffice": "상황실",
+      "position": "상황운용 부사관",
+      "duty": "보고/상황판 관리",
+      "rank": "하사",
+      "role": "상황 운용",
+      "userGroup": "본부상황실"
+    },
+    {
+      "userId": "user-016",
+      "functionOffice": "UAV",
+      "position": "UAV 운용장교",
+      "duty": "UAV 운용/임무계획",
+      "rank": "중위",
+      "role": "UAV 운용",
+      "userGroup": "정찰대"
+    },
+    {
+      "userId": "user-017",
+      "functionOffice": "탄약/폭발물",
+      "position": "탄약관리장교",
+      "duty": "탄약고/안전 진단",
+      "rank": "대위",
+      "role": "탄약 관리",
+      "userGroup": "군수지원사"
+    },
+    {
+      "userId": "user-018",
+      "functionOffice": "해상보급",
+      "position": "수송장교",
+      "duty": "해상 수송/로지스틱스",
+      "rank": "대위",
+      "role": "해상 보급",
+      "userGroup": "수송대대"
+    },
+    {
+      "userId": "user-019",
+      "functionOffice": "전자전",
+      "position": "전자전장교",
+      "duty": "교란/대응절차",
+      "rank": "대위",
+      "role": "전자전 운용",
+      "userGroup": "전자전부대"
+    },
+    {
+      "userId": "user-020",
+      "functionOffice": "합참/C4I",
+      "position": "체계관리 준위",
+      "duty": "계정/권한/백업",
+      "rank": "준위",
+      "role": "C4I 체계관리",
+      "userGroup": "합참 지휘통제실"
+    }
+  ]
+}

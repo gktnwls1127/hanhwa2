@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "userId": "user-001",
+      "name": "서현윤",
+      "department": "작전과",
+      "position": "작전과장(정)",
+      "rank": "소령",
+      "unit": "1여단"
+    },
+    {
+      "userId": "user-002",
+      "name": "홍준경",
+      "department": "작전과",
+      "position": "작전계획(정)",
+      "rank": "소위",
+      "unit": "1여단"
+    },
+    {
+      "userId": "user-003",
+      "name": "한유아",
+      "department": "작전과",
+      "position": "방공계획(정)",
+      "rank": "중령",
+      "unit": "1여단"
+    },
+  {
+      "userId": "user-004",
+      "name": "임현현",
+      "department": "작전과",
+      "position": "통합방위협조(정)",
+      "rank": "대위",
+      "unit": "1여단"
+    },
+    {
+      "userId": "user-005",
+      "name": "김시수",
+      "department": "정보과",
+      "position": "정보과장(정)",
+      "rank": "소위",
+      "unit": "1여단"
+    },
+    {
+      "userId": "user-006",
+      "name": "신승윤",
+      "department": "정보과",
+      "position": "전투피해평가(정)",
+      "rank": "준위",
+      "unit": "1여단"
+    },
+    {
+      "userId": "user-007",
+      "name": "임수수",
+      "department": "정보과",
+      "position": "대침투(정)",
+      "rank": "중령",
+      "unit": "1여단"
+    },
+    {
+      "userId": "user-008",
+      "name": "오민율",
+      "department": "정보과",
+      "position": "화생방(정)",
+      "rank": "중위",
+      "unit": "1여단"
+    },
+    {
+      "userId": "user-009",
+      "name": "임건원",
+      "department": "화력과",
+      "position": "화력과장(정)",
+      "rank": "대위",
+      "unit": "1여단"
+    },
+    {
+      "userId": "user-010",
+      "name": "한예빈",
+      "department": "화력과",
+      "position": "화력계획(정)",
+      "rank": "대령",
+      "unit": "1여단"
+    },
+    {
+      "userId": "user-011",
+      "name": "안채우",
+      "department": "화력과",
+      "position": "화력운용(정)",
+      "rank": "소령",
+      "unit": "1여단"
+    },
+    {
+      "userId": "user-012",
+      "name": "정예람",
+      "department": "화력과",
+      "position": "화력효과(정)",
+      "rank": "중위",
+      "unit": "1여단"
+    }
+  ]
+}

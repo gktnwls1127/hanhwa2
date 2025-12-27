@@ -1,0 +1,9 @@
+{
+  "units": [
+    { "unitId": "unit-001", "unitSize": "사단", "unitType": "보병", "combatPower": 88 },
+    { "unitId": "unit-002", "unitSize": "여단", "unitType": "기갑", "combatPower": 76 },
+    { "unitId": "unit-003", "unitSize": "연대", "unitType": "포병", "combatPower": 82 },
+    { "unitId": "unit-004", "unitSize": "대대", "unitType": "통신", "combatPower": 69 },
+    { "unitId": "unit-005", "unitSize": "비행단", "unitType": "공군", "combatPower": 91 }
+  ]
+}
