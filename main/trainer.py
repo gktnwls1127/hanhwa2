@@ -107,7 +107,7 @@ class Trainer:
                     report_category = report_category.cuda(non_blocking=True)
                 
                 logits = model(user_ID, user_dept, user_pos, user_rank, user_unit, user_title_text, user_content_text, user_time_text, user_history_mask, user_history_graph, user_history_category_mask, user_history_category_indices, None, \
-                               report_title_text, report_title_mask, report_content_text, report_content_mask, report_time_text, report_time_mask, report_category, user_history_category_indices, None) # [batch_size, 1 + negative_sample_num]
+                               report_title_text, report_title_mask, report_content_text, report_content_mask, report_time_text, report_time_mask, report_category, None) # [batch_size, 1 + negative_sample_num]
 
                 loss = self.loss(logits)
                 if model.report_encoder.auxiliary_loss is not None:
@@ -287,7 +287,7 @@ def distributed_train(rank, model: nn.Module, config: Config, command_corpus: Co
             report_category = report_category.cuda(non_blocking=True)                                                                                                  # [batch_size, 1 + negative_sample_num, max_content_length]
             
             logits = model(user_ID, user_dept, user_pos, user_rank, user_unit, user_title_text, user_content_text, user_time_text, user_history_mask, user_history_graph, user_history_category_mask, user_history_category_indices, None, \
-                           report_title, report_title_mask, report_content_text, report_content_mask, report_time_text, report_time_mask, report_category, user_history_category_indices, None) # [batch_size, 1 + negative_sample_num]
+                           report_title, report_title_mask, report_content_text, report_content_mask, report_time_text, report_time_mask, report_category, None) # [batch_size, 1 + negative_sample_num]
             loss = loss_(logits)
             if model.module.report_encoder.auxiliary_loss is not None:
                 report_auxiliary_loss = model.module.report_encoder.auxiliary_loss.mean()

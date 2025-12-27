@@ -21,7 +21,7 @@ def compute_scores(model: nn.Module, command_corpus: Command_Corpus, config, bat
     model.eval()
     with torch.no_grad():
         for (user_ID, user_dept, user_pos, user_rank, user_unit, user_title_text, user_content_text, user_time_text, user_history_mask, user_history_graph, user_history_category_mask, user_history_category_indices, \
-             report_title, report_title_mask, report_content_text, report_content_mask, report_time_text, report_time_mask, report_category, user_history_category, sample_idx) in dataloader:
+             report_title, report_title_mask, report_content_text, report_content_mask, report_time_text, report_time_mask, report_category, sample_idx) in dataloader:
             if config.gpu_available:
                 user_ID = user_ID.cuda(non_blocking=True)
                 user_dept = user_dept.cuda(non_blocking=True)
@@ -54,7 +54,7 @@ def compute_scores(model: nn.Module, command_corpus: Command_Corpus, config, bat
             report_time_mask = report_time_mask.unsqueeze(dim=1)
             report_category = report_category.unsqueeze(dim=1)
             batch_scores = model(user_ID, user_dept, user_pos, user_rank, user_unit, user_title_text, user_content_text, user_time_text, user_history_mask, user_history_graph, user_history_category_mask, user_history_category_indices, None, \
-                                                    report_title, report_title_mask, report_content_text, report_content_mask, report_time_text, report_time_mask, report_category, user_history_category, sample_idx).squeeze(dim=1) # [batch_size]
+                                                    report_title, report_title_mask, report_content_text, report_content_mask, report_time_text, report_time_mask, report_category, sample_idx).squeeze(dim=1) # [batch_size]
             
             # sample_idx를 CPU로 변환하고 batch_scores와 함께 저장
             batch_sample_idx = sample_idx.cpu().numpy() if isinstance(sample_idx, torch.Tensor) else sample_idx
