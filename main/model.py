@@ -43,30 +43,68 @@ class Model(nn.Module):
             nn.init.xavier_uniform_(self.mlp.weight, gain=nn.init.calculate_gain('relu'))
             nn.init.zeros_(self.mlp.bias)
 
-    def forward(self, user_ID, user_dept, user_pos, user_rank, user_unit, user_title_text, user_content_text, user_time_text, user_history_mask, user_history_graph, user_history_category_mask, user_history_category_indices, user_embedding, 
-        report_title_text, report_title_mask, report_content_text, report_content_mask, report_time_text, report_time_mask, report_category, sample_idx):
-        user_title_mask = user_title_text.ne(0)
-        user_content_mask = user_content_text.ne(0)
-        user_time_mask = user_time_text.ne(0)
-        
-        # 사용자 임베딩 (사용자 히스토리 기반)
-        user_embedding = self.dropout(self.user_embedding(user_ID)) if self.use_user_embedding else None
-        
-        # 명령 인코딩 (제목, 본문, 시간, 카테고리)
-        report_representation = self.report_encoder(report_title_text, report_title_mask, report_content_text, report_content_mask, report_time_text, report_time_mask, report_category, user_embedding) # [batch_size, 1 + negative_sample_num, report_embedding_dim]
-        
-        # 사용자 인코딩 (사용자 히스토리 + 속성)
-        # report_representation를 후보 명령 정보로 제공하여 사용자 벡터 생성
-        user_representation = self.user_encoder(user_dept, user_pos, user_rank, user_unit, user_title_text, user_title_mask, user_content_text, user_content_mask, user_time_text, user_time_mask, user_history_category_indices, \
-                user_history_mask, user_history_graph, user_history_category_mask, user_history_category_indices, user_embedding, report_representation)  # [batch_size, 1 + negative_sample_num, report_embedding_dim]
-        
-        # USER-COMMAND 호환성 점수 계산 (사용자가 해당 명령을 읽을 확률)
-        if self.click_predictor == 'dot_product':
-            # Dot product: user_vec · command_vec
-            logits = (user_representation * report_representation).sum(dim=2) # [batch_size, 1+negative_sample_num]
-        elif self.click_predictor == 'mlp':
-            # MLP: concatenate user_vec와 command_vec → MLP → 점수
-            context = self.dropout(F.relu(self.mlp(torch.cat([user_representation, report_representation], dim=2)), inplace=True))
-            logits = self.out(context).squeeze(dim=2)  # [batch_size, 1+negative_sample_num]
-        
+    def forward(self, cmd_title_text, cmd_title_mask, cmd_content_text, cmd_content_mask, cmd_time_text, cmd_time_mask, cmd_category, \
+            cand_user_ID, cand_dept, cand_pos, cand_rank, cand_unit, cand_title_text, cand_title_mask, cand_content_text, cand_content_mask, \
+                cand_time_text, cand_time_mask, cand_hist_category, cand_hist_mask, cand_hist_graph, cand_cat_mask, cand_cat_idx, _extra=None,):
+        B = cand_user_ID.size(0)
+        K = cand_user_ID.size(1)
+
+        # 1) command vector: [B, D]
+        cmd_title_text   = cmd_title_text.unsqueeze(1)   # [B,1,L]
+        cmd_title_mask   = cmd_title_mask.unsqueeze(1)
+        cmd_content_text = cmd_content_text.unsqueeze(1)
+        cmd_content_mask = cmd_content_mask.unsqueeze(1)
+        cmd_time_text    = cmd_time_text.unsqueeze(1)
+        cmd_time_mask    = cmd_time_mask.unsqueeze(1)
+        cmd_category     = cmd_category.unsqueeze(1)     # [B,1]
+
+        cmd_repr = self.report_encoder(
+            cmd_title_text, cmd_title_mask,
+            cmd_content_text, cmd_content_mask,
+            cmd_time_text, cmd_time_mask,
+            cmd_category,
+            None
+        ).squeeze(1)  # [B, D]
+
+        # 2) candidate users -> flatten(B*K)로 user_encoder 태움
+        BK = B * K
+
+        flat_dept = cand_dept.view(BK)
+        flat_pos  = cand_pos.view(BK)
+        flat_rank = cand_rank.view(BK)
+        flat_unit = cand_unit.view(BK)
+
+        flat_title_text   = cand_title_text.view(BK, *cand_title_text.shape[2:])
+        flat_title_mask   = cand_title_mask.view(BK, *cand_title_mask.shape[2:])
+        flat_content_text = cand_content_text.view(BK, *cand_content_text.shape[2:])
+        flat_content_mask = cand_content_mask.view(BK, *cand_content_mask.shape[2:])
+        flat_time_text    = cand_time_text.view(BK, *cand_time_text.shape[2:])
+        flat_time_mask    = cand_time_mask.view(BK, *cand_time_mask.shape[2:])
+        flat_hist_cat     = cand_hist_category.view(BK, *cand_hist_category.shape[2:])
+        flat_hist_mask    = cand_hist_mask.view(BK, *cand_hist_mask.shape[2:])
+
+        flat_hist_graph = cand_hist_graph.view(BK, *cand_hist_graph.shape[2:]) if cand_hist_graph is not None else None
+        flat_cat_mask   = cand_cat_mask.view(BK, *cand_cat_mask.shape[2:]) if cand_cat_mask is not None else None
+        flat_cat_idx    = cand_cat_idx.view(BK, *cand_cat_idx.shape[2:]) if cand_cat_idx is not None else None
+
+        # ATT는 candidate_report_representation.size(1)만 쓰니까 더미로 1개 줌
+        dummy = torch.zeros(BK, 1, self.report_embedding_dim, device=flat_title_text.device)
+
+        user_repr = self.user_encoder(
+            flat_dept, flat_pos, flat_rank, flat_unit,
+            flat_title_text, flat_title_mask, flat_content_text, flat_content_mask, flat_time_text, flat_time_mask,
+            flat_hist_cat, flat_hist_mask, flat_hist_graph, flat_cat_mask, flat_cat_idx, None, dummy
+        ).squeeze(1)  # [BK, D]
+
+        user_repr = user_repr.view(B, K, -1)  # [B, K, D]
+
+        # 3) score
+        if self.click_predictor == "dot_product":
+            logits = (user_repr * cmd_repr.unsqueeze(1)).sum(dim=2)  # [B, K]
+        else:
+            # cmd를 [B,K,D]로 확장해서 concat
+            cmd_expand = cmd_repr.unsqueeze(1).expand(-1, K, -1)
+            context = self.dropout(F.relu(self.mlp(torch.cat([user_repr, cmd_expand], dim=2)), inplace=True))
+            logits = self.out(context).squeeze(2)  # [B, K]
+
         return logits

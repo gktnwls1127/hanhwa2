@@ -6,16 +6,13 @@ import torch.utils.data as data
 from numpy.random import randint
 
 
-# =========================================================
-# Train Dataset (Command → User)
-# =========================================================
 class Command_Train_Dataset(data.Dataset):
     def __init__(self, corpus: Command_Corpus, config: Config):
         self.config = config
         self.negative_sample_num = corpus.negative_sample_num
         self.user_num = corpus.user_num
 
-        # ---------- command (report) ----------
+        # command (report)
         self.report_title_text   = corpus.report_title_text
         self.report_title_mask   = corpus.report_title_mask
         self.report_content_text = corpus.report_content_text
@@ -24,86 +21,120 @@ class Command_Train_Dataset(data.Dataset):
         self.report_time_mask    = corpus.report_time_mask
         self.report_category     = corpus.report_category
 
-        # ---------- user meta ----------
+        # user meta
         self.user_department = corpus.user_department
         self.user_position   = corpus.user_position
         self.user_rank       = corpus.user_rank
         self.user_unit       = corpus.user_unit
 
-        # ---------- user history graph ----------
+        # user history index/mask (중요!)
+        self.user_history_index = corpus.train_user_history_index      # [user_num, max_history]
+        self.user_history_mask  = corpus.train_user_history_mask       # [user_num, max_history]
+
+        # graph (optional: ATT는 사실상 안 쓰지만 유지)
         self.user_history_graph            = corpus.train_user_history_graph
         self.user_history_category_mask    = corpus.train_user_history_category_mask
         self.user_history_category_indices = corpus.train_user_history_category_indices
         self.useridx_to_graphrow           = corpus.train_useridx_to_graphrow
 
-        # ---------- corpus samples ----------
-        # sample = [cmd_idx, pos_user, neg_users, behavior_index]
+        # samples: (cmd_idx, pos_user, neg_pool, behavior_index)
         self.samples = corpus.train_userDataset
         self.num = len(self.samples)
 
-        # sampled users (pos + neg)
         self.train_samples = [
             [0 for _ in range(1 + self.negative_sample_num)]
             for _ in range(self.num)
         ]
 
-    # -----------------------------------------------------
-    # Negative sampling (user dimension)
-    # -----------------------------------------------------
     def negative_sampling(self):
         print(f"\nBegin negative sampling, training sample num : {self.num}")
-        start_time = time.time()
+        st = time.time()
 
-        for i, sample in enumerate(self.samples):
-            _, pos_user, neg_candidates, _ = sample
-
+        for i, (cmd_idx, pos_user, neg_pool, behavior_index) in enumerate(self.samples):
             self.train_samples[i][0] = pos_user
 
-            if neg_candidates:
-                cand_num = len(neg_candidates)
+            if neg_pool:
                 for j in range(self.negative_sample_num):
-                    self.train_samples[i][j + 1] = neg_candidates[j % cand_num]
+                    self.train_samples[i][j+1] = neg_pool[j % len(neg_pool)]
             else:
                 used = {pos_user, 0}
                 for j in range(self.negative_sample_num):
                     while True:
                         uid = randint(1, self.user_num)
                         if uid not in used:
-                            self.train_samples[i][j + 1] = uid
+                            self.train_samples[i][j+1] = uid
                             used.add(uid)
                             break
 
-        print(f"End negative sampling, used time : {time.time() - start_time:.3f}s")
+        print(f"End negative sampling, used time : {time.time() - st:.3f}s")
 
-    # -----------------------------------------------------
-    # Get item
-    # -----------------------------------------------------
     def __getitem__(self, index):
         cmd_idx, pos_user, _, behavior_index = self.samples[index]
 
-        users = np.asarray(self.train_samples[index], dtype=np.int64)
-        graph_row = self.useridx_to_graphrow.get(pos_user, 0)
+        users = np.asarray(self.train_samples[index], dtype=np.int64)  # [K]
+        K = users.shape[0]
+
+        # ----------------------------
+        # 1) command(쿼리) 텐서: 1개
+        # ----------------------------
+        cmd_title_text   = self.report_title_text[cmd_idx]
+        cmd_title_mask   = self.report_title_mask[cmd_idx]
+        cmd_content_text = self.report_content_text[cmd_idx]
+        cmd_content_mask = self.report_content_mask[cmd_idx]
+        cmd_time_text    = self.report_time_text[cmd_idx]
+        cmd_time_mask    = self.report_time_mask[cmd_idx]
+        cmd_category     = self.report_category[cmd_idx]
+
+        # ----------------------------
+        # 2) candidate users 텐서: K명
+        # ----------------------------
+        cand_user_ID   = users
+        cand_dept      = self.user_department[users]
+        cand_pos       = self.user_position[users]
+        cand_rank      = self.user_rank[users]
+        cand_unit      = self.user_unit[users]
+
+        # history index/mask: [K, H]
+        hist_idx  = self.user_history_index[users]
+        hist_mask = self.user_history_mask[users]
+
+        # history의 report 텍스트로 변환: [K, H, ...]
+        cand_title_text   = self.report_title_text[hist_idx]
+        cand_title_mask   = self.report_title_mask[hist_idx]
+        cand_content_text = self.report_content_text[hist_idx]
+        cand_content_mask = self.report_content_mask[hist_idx]
+        cand_time_text    = self.report_time_text[hist_idx]
+        cand_time_mask    = self.report_time_mask[hist_idx]
+        cand_hist_category = self.report_category[hist_idx]  # [K, H]
+
+        # graph 관련(있으면 같이)
+        rows = [self.useridx_to_graphrow.get(int(uid), 0) for uid in users]
+        cand_hist_graph = self.user_history_graph[rows]                 # [K, ...]
+        cand_cat_mask   = self.user_history_category_mask[rows]         # [K, ...]
+        cand_cat_idx    = self.user_history_category_indices[rows]      # [K, H] (있으면)
+
+        # label: 항상 0번이 pos
+        pos_index = 0
 
         return (
-            # -------- user attributes (B = 1+neg) --------
-            self.user_department[users],
-            self.user_position[users],
-            self.user_rank[users],
-            self.user_unit[users],
+            # command
+            cmd_title_text, cmd_title_mask,
+            cmd_content_text, cmd_content_mask,
+            cmd_time_text, cmd_time_mask,
+            cmd_category,
 
-            # -------- user history graph --------
-            self.user_history_graph[graph_row],
-            self.user_history_category_mask[graph_row],
-            self.user_history_category_indices[graph_row],
+            # candidate users
+            cand_user_ID, cand_dept, cand_pos, cand_rank, cand_unit,
+            cand_title_text, cand_title_mask,
+            cand_content_text, cand_content_mask,
+            cand_time_text, cand_time_mask,
+            cand_hist_category,
+            hist_mask,
+            cand_hist_graph,
+            cand_cat_mask,
+            cand_cat_idx,
 
-            # -------- candidate command --------
-            self.report_title_text[cmd_idx],
-            self.report_title_mask[cmd_idx],
-            self.report_content_text[cmd_idx],
-            self.report_content_mask[cmd_idx],
-            self.report_time_text[cmd_idx],
-            self.report_time_mask[cmd_idx],
-            self.report_category[cmd_idx],
+            pos_index
         )
 
     def __len__(self):
@@ -118,7 +149,7 @@ class Command_DevTest_Dataset(data.Dataset):
         assert mode in ['dev', 'test']
         self.mode = mode
 
-        # ---------- command ----------
+        # ---------- command (report) ----------
         self.report_title_text   = corpus.report_title_text
         self.report_title_mask   = corpus.report_title_mask
         self.report_content_text = corpus.report_content_text
@@ -137,40 +168,102 @@ class Command_DevTest_Dataset(data.Dataset):
             self.user_history_graph            = corpus.dev_user_history_graph
             self.user_history_category_mask    = corpus.dev_user_history_category_mask
             self.user_history_category_indices = corpus.dev_user_history_category_indices
+            self.user_history_index            = corpus.dev_user_history_index   
+            self.user_history_mask             = corpus.dev_user_history_mask    
             self.samples = corpus.dev_userDataset
             self.useridx_to_graphrow = corpus.dev_useridx_to_graphrow
         else:
             self.user_history_graph            = corpus.test_user_history_graph
             self.user_history_category_mask    = corpus.test_user_history_category_mask
             self.user_history_category_indices = corpus.test_user_history_category_indices
+            self.user_history_index            = corpus.test_user_history_index  
+            self.user_history_mask             = corpus.test_user_history_mask   
             self.samples = corpus.test_userDataset
             self.useridx_to_graphrow = corpus.test_useridx_to_graphrow
 
         self.num = len(self.samples)
 
     def __getitem__(self, index):
-        # sample = [cmd_idx, user_idx, behavior_index]
+        # sample = [cmd_idx, user_idx(스칼라 or 리스트/배열), behavior_index]
         cmd_idx, user_idx, behavior_index = self.samples[index]
-        graph_row = self.useridx_to_graphrow.get(user_idx, 0)
+
+        # ----------------------------
+        # 0) user_idx를 "배열"로 통일 처리
+        # ----------------------------
+        if isinstance(user_idx, (list, tuple)):
+            u = np.asarray(user_idx, dtype=np.int64)
+        elif hasattr(user_idx, "dtype") and hasattr(user_idx, "shape"):  # np.ndarray/torch tensor 유사
+            u = np.asarray(user_idx, dtype=np.int64)
+        else:
+            u = np.asarray([user_idx], dtype=np.int64)  # 스칼라도 [1]로
+
+        # graph row: user별로 뽑기
+        rows = [self.useridx_to_graphrow.get(int(uid), 0) for uid in u]
+
+        # ----------------------------
+        # 1) candidate user meta: [K]
+        # ----------------------------
+        dept = self.user_department[u]
+        pos  = self.user_position[u]
+        rank = self.user_rank[u]
+        unit = self.user_unit[u]
+
+        # ----------------------------
+        # 2) user history index/mask: [K, H]
+        # ----------------------------
+        hist_idx  = self.user_history_index[u]
+        hist_mask = self.user_history_mask[u]
+
+        # history -> report text/mask: [K, H, ...]
+        user_title_text   = self.report_title_text[hist_idx]
+        user_title_mask   = self.report_title_mask[hist_idx]
+        user_content_text = self.report_content_text[hist_idx]
+        user_content_mask = self.report_content_mask[hist_idx]
+        user_time_text    = self.report_time_text[hist_idx]
+        user_time_mask    = self.report_time_mask[hist_idx]
+        user_hist_category = self.report_category[hist_idx]  # [K, H]
+
+        # ----------------------------
+        # 3) graph 관련: [K, ...]
+        # ----------------------------
+        hist_graph = self.user_history_graph[rows]
+        cat_mask   = self.user_history_category_mask[rows]
+        cat_idx    = self.user_history_category_indices[rows]
+
+        # ----------------------------
+        # 4) command(query) 텐서: 1개
+        # ----------------------------
+        cmd_title_text   = self.report_title_text[cmd_idx]
+        cmd_title_mask   = self.report_title_mask[cmd_idx]
+        cmd_content_text = self.report_content_text[cmd_idx]
+        cmd_content_mask = self.report_content_mask[cmd_idx]
+        cmd_time_text    = self.report_time_text[cmd_idx]
+        cmd_time_mask    = self.report_time_mask[cmd_idx]
+        cmd_category     = self.report_category[cmd_idx]
 
         return (
-            user_idx,
-            self.user_department[user_idx],
-            self.user_position[user_idx],
-            self.user_rank[user_idx],
-            self.user_unit[user_idx],
+            # user (candidate users)
+            u,            # [K]  (기존 user_idx 자리에 들어감)
+            dept, pos, rank, unit,
 
-            self.user_history_graph[graph_row],
-            self.user_history_category_mask[graph_row],
-            self.user_history_category_indices[graph_row],
+            user_title_text, user_title_mask,
+            user_content_text, user_content_mask,
+            user_time_text, user_time_mask,
+            user_hist_category,
+            hist_mask,
 
-            self.report_title_text[cmd_idx],
-            self.report_title_mask[cmd_idx],
-            self.report_content_text[cmd_idx],
-            self.report_content_mask[cmd_idx],
-            self.report_time_text[cmd_idx],
-            self.report_time_mask[cmd_idx],
-            self.report_category[cmd_idx],
+            hist_graph,
+            cat_mask,
+            cat_idx,
+
+            # command
+            cmd_title_text,
+            cmd_title_mask,
+            cmd_content_text,
+            cmd_content_mask,
+            cmd_time_text,
+            cmd_time_mask,
+            cmd_category,
 
             behavior_index
         )

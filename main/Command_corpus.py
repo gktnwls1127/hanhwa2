@@ -733,7 +733,7 @@ class Command_Corpus:
         self.dev_user_history_index,  self.dev_user_history_mask  = _make_user_history_tables(config.dev_root)
         self.test_user_history_index, self.test_user_history_mask = _make_user_history_tables(config.test_root)
 
-        self.train_samples = []  # (cmd_idx, pos_user, neg_pool, behavior_index)
+        self.train_userDataset = []  # (cmd_idx, pos_user, neg_pool, behavior_index)
 
         with open(os.path.join(config.train_root, 'behaviors.tsv'), 'r', encoding='utf-8') as f:
             for behavior_index, line in enumerate(f):
@@ -758,7 +758,7 @@ class Command_Corpus:
                         neg_pool.append(uidx)
 
                 for pos_u in pos_users:
-                    self.train_samples.append((cmd_idx, pos_u, neg_pool, behavior_index))
+                    self.train_userDataset.append((cmd_idx, pos_u, neg_pool, behavior_index))
 
         self.dev_userDataset = []
         self.dev_indices = []

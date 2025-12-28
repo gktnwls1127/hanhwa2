@@ -110,10 +110,19 @@ class NAML(ReportEncoder):
         report_num = time_text.size(1)
         batch_report_num = batch_size * report_num
         # 1. word embedding
-        title_w = self.dropout(self.word_embedding(title_text)).view([batch_report_num, self.max_time_length, self.word_embedding_dim]) 
-        time_w = self.dropout(self.word_embedding(time_text)).view([batch_report_num, self.max_time_length, self.word_embedding_dim])           # [batch_size * report_num, max_time_length, word_embedding_dim]
-        content_w = self.dropout(self.word_embedding(content_text)).view([batch_report_num, self.max_content_length, self.word_embedding_dim])  # [batch_size * report_num, max_content_length, word_embedding_dim]
-        
+        title_emb = self.dropout(self.word_embedding(title_text))
+        time_emb  = self.dropout(self.word_embedding(time_text))
+        content_emb = self.dropout(self.word_embedding(content_text))
+
+        # 실제 길이 기반으로 reshape
+        title_len = title_emb.size(-2)   # ← 중요
+        time_len  = time_emb.size(-2)
+        content_len = content_emb.size(-2)
+
+        title_w = title_emb.view(batch_report_num, title_len, self.word_embedding_dim)
+        time_w  = time_emb.view(batch_report_num, time_len,  self.word_embedding_dim)
+        content_w = content_emb.view(batch_report_num, content_len, self.word_embedding_dim)
+
         # 2. CNN encoding
         title_c = self.dropout_(self.title_conv(title_w.permute(0, 2, 1)).permute(0, 2, 1))
         time_c = self.dropout_(self.time_conv(time_w.permute(0, 2, 1)).permute(0, 2, 1))                                                        # [batch_size * report_num, max_title_length, cnn_kernel_num]
